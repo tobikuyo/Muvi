@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C10499324B3AFD600F32489 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10499224B3AFD600F32489 /* String+Extension.swift */; };
 		2CA0826E24B33B6300B5D6A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0826D24B33B6300B5D6A3 /* AppDelegate.swift */; };
 		2CA0827024B33B6300B5D6A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0826F24B33B6300B5D6A3 /* SceneDelegate.swift */; };
 		2CA0827524B33B6300B5D6A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA0827324B33B6300B5D6A3 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C10499224B3AFD600F32489 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		2CA0826A24B33B6300B5D6A3 /* PressPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PressPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CA0826D24B33B6300B5D6A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CA0826F24B33B6300B5D6A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,7 +108,7 @@
 				2CA0828624B33CF400B5D6A3 /* Views */,
 				2CA0828524B33CEE00B5D6A3 /* Controllers */,
 				2CA0828424B33CE800B5D6A3 /* Fonts */,
-				2CA0828324B33CD300B5D6A3 /* Helpers */,
+				2CA0828324B33CD300B5D6A3 /* Extensions */,
 			);
 			path = PressPlay;
 			sourceTree = "<group>";
@@ -131,11 +133,12 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		2CA0828324B33CD300B5D6A3 /* Helpers */ = {
+		2CA0828324B33CD300B5D6A3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				2C10499224B3AFD600F32489 /* String+Extension.swift */,
 			);
-			path = Helpers;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		2CA0828424B33CE800B5D6A3 /* Fonts */ = {
@@ -194,7 +197,6 @@
 				7604A92B1E18BA45D91330CE /* Pods-PressPlay.debug.xcconfig */,
 				D840A74ADC7470C4A6E4992A /* Pods-PressPlay.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -323,6 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C10499324B3AFD600F32489 /* String+Extension.swift in Sources */,
 				2CA082AE24B36D2900B5D6A3 /* APIController.swift in Sources */,
 				2CA082AC24B36C9900B5D6A3 /* Results.swift in Sources */,
 				2CA082A824B3525500B5D6A3 /* MovieCollectionViewCell.swift in Sources */,
