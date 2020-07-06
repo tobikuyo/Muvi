@@ -23,6 +23,7 @@
 		2CA0829E24B3456200B5D6A3 /* Cuprum-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CA0829D24B3456200B5D6A3 /* Cuprum-Bold.ttf */; };
 		2CA082A024B3456B00B5D6A3 /* Cuprum-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CA0829F24B3456B00B5D6A3 /* Cuprum-Regular.ttf */; };
 		2CA082A624B34F1500B5D6A3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA082A524B34F1500B5D6A3 /* HomeViewController.swift */; };
+		2CA082A824B3525500B5D6A3 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA082A724B3525500B5D6A3 /* MovieCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		2CA0829D24B3456200B5D6A3 /* Cuprum-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cuprum-Bold.ttf"; sourceTree = "<group>"; };
 		2CA0829F24B3456B00B5D6A3 /* Cuprum-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cuprum-Regular.ttf"; sourceTree = "<group>"; };
 		2CA082A524B34F1500B5D6A3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		2CA082A724B3525500B5D6A3 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 		2CA0828624B33CF400B5D6A3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2CA082A724B3525500B5D6A3 /* MovieCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CA082A824B3525500B5D6A3 /* MovieCollectionViewCell.swift in Sources */,
 				2CA0826E24B33B6300B5D6A3 /* AppDelegate.swift in Sources */,
 				2CA0827024B33B6300B5D6A3 /* SceneDelegate.swift in Sources */,
 				2CA082A624B34F1500B5D6A3 /* HomeViewController.swift in Sources */,

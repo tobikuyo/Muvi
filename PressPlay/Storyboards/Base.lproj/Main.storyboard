@@ -13,10 +13,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="Mv2-1p-5dU">
             <objects>
-                <viewController id="DhA-3H-n2r" sceneMemberID="viewController">
+                <viewController id="DhA-3H-n2r" customClass="HomeViewController" customModule="PressPlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zor-fP-LTr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,18 +49,36 @@
                                                             <size key="itemSize" width="128" height="170"/>
                                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                            <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
                                                         </collectionViewFlowLayout>
                                                         <cells>
-                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="T5M-im-8xc">
-                                                                <rect key="frame" x="10" y="9.5" width="128" height="170"/>
+                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PopularCell" id="T5M-im-8xc" customClass="MovieCollectionViewCell" customModule="PressPlay" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="9.5" width="128" height="170"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="FuT-be-PG3">
                                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="170"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
+                                                                    <subviews>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lU6-PA-cU7">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="170"/>
+                                                                        </imageView>
+                                                                    </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstItem="lU6-PA-cU7" firstAttribute="leading" secondItem="FuT-be-PG3" secondAttribute="leading" id="G7a-ix-mVz"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="lU6-PA-cU7" secondAttribute="trailing" id="RSx-dQ-0dL"/>
+                                                                        <constraint firstItem="lU6-PA-cU7" firstAttribute="top" secondItem="FuT-be-PG3" secondAttribute="top" id="kEk-XK-B5d"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="lU6-PA-cU7" secondAttribute="bottom" id="n68-xn-Ogv"/>
+                                                                    </constraints>
                                                                 </collectionViewCellContentView>
+                                                                <connections>
+                                                                    <outlet property="posterImageView" destination="lU6-PA-cU7" id="3Ay-0B-xUk"/>
+                                                                </connections>
                                                             </collectionViewCell>
                                                         </cells>
+                                                        <connections>
+                                                            <outlet property="dataSource" destination="DhA-3H-n2r" id="dsO-8u-Gqp"/>
+                                                            <outlet property="delegate" destination="DhA-3H-n2r" id="tSx-LZ-bAG"/>
+                                                        </connections>
                                                     </collectionView>
                                                 </subviews>
                                                 <constraints>
@@ -83,18 +101,36 @@
                                                             <size key="itemSize" width="128" height="170"/>
                                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                            <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
                                                         </collectionViewFlowLayout>
                                                         <cells>
-                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="wZ7-x3-G3i">
-                                                                <rect key="frame" x="10" y="16.5" width="128" height="170"/>
+                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TopRatedCell" id="wZ7-x3-G3i" customClass="MovieCollectionViewCell" customModule="PressPlay" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="16.5" width="128" height="170"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="xRy-aA-obo">
                                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="170"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
+                                                                    <subviews>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CyU-f7-0tk">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="170"/>
+                                                                        </imageView>
+                                                                    </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstItem="CyU-f7-0tk" firstAttribute="leading" secondItem="xRy-aA-obo" secondAttribute="leading" id="KN7-AP-qn2"/>
+                                                                        <constraint firstItem="CyU-f7-0tk" firstAttribute="top" secondItem="xRy-aA-obo" secondAttribute="top" id="VB2-iu-EwO"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="CyU-f7-0tk" secondAttribute="bottom" id="uE7-hk-5gn"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="CyU-f7-0tk" secondAttribute="trailing" id="wzE-f3-IZH"/>
+                                                                    </constraints>
                                                                 </collectionViewCellContentView>
+                                                                <connections>
+                                                                    <outlet property="posterImageView" destination="CyU-f7-0tk" id="mPt-KI-cv9"/>
+                                                                </connections>
                                                             </collectionViewCell>
                                                         </cells>
+                                                        <connections>
+                                                            <outlet property="dataSource" destination="DhA-3H-n2r" id="Trd-H9-caY"/>
+                                                            <outlet property="delegate" destination="DhA-3H-n2r" id="VNk-0T-qUP"/>
+                                                        </connections>
                                                     </collectionView>
                                                 </subviews>
                                                 <constraints>
@@ -117,18 +153,36 @@
                                                             <size key="itemSize" width="128" height="170"/>
                                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                            <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
                                                         </collectionViewFlowLayout>
                                                         <cells>
-                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="SXf-Dl-8JH">
-                                                                <rect key="frame" x="10" y="21" width="128" height="170"/>
+                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NowPlayingCell" id="SXf-Dl-8JH" customClass="MovieCollectionViewCell" customModule="PressPlay" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="21" width="128" height="170"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="agU-pc-4SG">
                                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="170"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
+                                                                    <subviews>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jkF-Pj-cNI">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="170"/>
+                                                                        </imageView>
+                                                                    </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstItem="jkF-Pj-cNI" firstAttribute="top" secondItem="agU-pc-4SG" secondAttribute="top" id="An3-gR-SxS"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="jkF-Pj-cNI" secondAttribute="trailing" id="Cy6-Yu-jrv"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="jkF-Pj-cNI" secondAttribute="bottom" id="iy1-1M-iy4"/>
+                                                                        <constraint firstItem="jkF-Pj-cNI" firstAttribute="leading" secondItem="agU-pc-4SG" secondAttribute="leading" id="tUQ-pn-m3V"/>
+                                                                    </constraints>
                                                                 </collectionViewCellContentView>
+                                                                <connections>
+                                                                    <outlet property="posterImageView" destination="jkF-Pj-cNI" id="VFe-5m-Yet"/>
+                                                                </connections>
                                                             </collectionViewCell>
                                                         </cells>
+                                                        <connections>
+                                                            <outlet property="dataSource" destination="DhA-3H-n2r" id="ZwG-hs-osf"/>
+                                                            <outlet property="delegate" destination="DhA-3H-n2r" id="MfW-KE-IZ0"/>
+                                                        </connections>
                                                     </collectionView>
                                                 </subviews>
                                                 <constraints>
@@ -151,18 +205,36 @@
                                                             <size key="itemSize" width="128" height="170"/>
                                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                            <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
                                                         </collectionViewFlowLayout>
                                                         <cells>
-                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="VKi-RB-8aA">
-                                                                <rect key="frame" x="10" y="17.5" width="128" height="170"/>
+                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ComingSoonCell" id="VKi-RB-8aA" customClass="MovieCollectionViewCell" customModule="PressPlay" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="17.5" width="128" height="170"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="LkY-OV-Y80">
                                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="170"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
+                                                                    <subviews>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5hq-Jv-bOk">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="170"/>
+                                                                        </imageView>
+                                                                    </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstItem="5hq-Jv-bOk" firstAttribute="top" secondItem="LkY-OV-Y80" secondAttribute="top" id="3og-tC-k4M"/>
+                                                                        <constraint firstItem="5hq-Jv-bOk" firstAttribute="leading" secondItem="LkY-OV-Y80" secondAttribute="leading" id="5GC-4G-9Hx"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="5hq-Jv-bOk" secondAttribute="bottom" id="KwK-Wl-hPs"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="5hq-Jv-bOk" secondAttribute="trailing" id="MnI-6Y-k8q"/>
+                                                                    </constraints>
                                                                 </collectionViewCellContentView>
+                                                                <connections>
+                                                                    <outlet property="posterImageView" destination="5hq-Jv-bOk" id="rLF-is-s7S"/>
+                                                                </connections>
                                                             </collectionViewCell>
                                                         </cells>
+                                                        <connections>
+                                                            <outlet property="dataSource" destination="DhA-3H-n2r" id="Tsw-sC-CHY"/>
+                                                            <outlet property="delegate" destination="DhA-3H-n2r" id="mbV-Rz-zd1"/>
+                                                        </connections>
                                                     </collectionView>
                                                 </subviews>
                                                 <constraints>
@@ -218,6 +290,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="fID-jf-ikk"/>
                     <size key="freeformSize" width="414" height="1400"/>
+                    <connections>
+                        <outlet property="comingSoonCollectionView" destination="ECy-U3-n1y" id="zY8-hE-zby"/>
+                        <outlet property="nowPlayingCollectionView" destination="Cuy-FW-Y79" id="AYu-6z-eDA"/>
+                        <outlet property="popularCollectionView" destination="YHo-qx-Vs0" id="piR-lT-pQ5"/>
+                        <outlet property="topRatedCollectionView" destination="A5g-tZ-e4i" id="zTh-4y-Cnc"/>
+                        <outlet property="trendingMovieImage" destination="RcR-7X-5iY" id="x6X-7w-LiZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WIv-RM-sj2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
