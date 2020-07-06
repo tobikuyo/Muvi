@@ -60,5 +60,17 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Caudex-Regular.ttf</string>
+		<string>Caudex-Bold.ttf</string>
+		<string>Cuprum-Regular.ttf</string>
+		<string>Cuprum-Bold.ttf</string>
+		<string>Oswald-Bold.ttf</string>
+		<string>Oswald-Light.ttf</string>
+		<string>Oswald-Medium.ttf</string>
+		<string>Oswald-SemiBold.ttf</string>
+		<string>PathwayGothicOne-Regular.ttf</string>
+	</array>
 </dict>
 </plist>
