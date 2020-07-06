@@ -7,11 +7,21 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MovieCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet var posterImageView: UIImageView!
 
-    var movie: Movie?
-    
+    var movie: Movie? {
+        didSet {
+            updateViews()
+        }
+    }
+
+    private func updateViews() {
+        guard let movie = movie else { return }
+        posterImageView.kf.setImage(with: movie.poster?.url)
+        layer.cornerRadius = 15
+    }
 }
