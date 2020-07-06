@@ -29,11 +29,56 @@ class HomeViewController: UIViewController {
     private var nowPlayingMovies: [Movie] = []
     private var upcomingMovies: [Movie] = []
 
+    private let popular = "popular"
+    private let topRated = "top_rated"
+    private let nowPlaying = "now_playing"
+    private let upcoming = "upcoming"
+
     // MARK: - View Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchAllSections()
+    }
 
+    // MARK: - Methods
+
+    private func fetchAllSections() {
+        fetchMovies(forSection: popular)
+        fetchMovies(forSection: topRated)
+        fetchMovies(forSection: nowPlaying)
+        fetchMovies(forSection: upcoming)
+    }
+
+    private func fetchMovies(forSection section: String, onPage: Int = 1) {
+        APIController.shared.fetchMovies(forSection: section, on: page) { data in
+            guard let data = data else { return }
+
+            switch section {
+            case self.popular:
+                self.popularMovies = data.results
+                self.popularTotalPages = data.totalPages
+                self.popularCollectionView.reloadData()
+
+            case self.topRated:
+                self.topRatedMovies = data.results
+                self.topRatedTotalPages = data.totalPages
+                self.topRatedCollectionView.reloadData()
+
+            case self.nowPlaying:
+                self.nowPlayingMovies = data.results
+                self.nowPlayingTotalPages = data.totalPages
+                self.nowPlayingCollectionView.reloadData()
+
+            case self.upcoming:
+                self.upcomingMovies = data.results
+                self.upcomingTotalPages = data.totalPages
+                self.comingSoonCollectionView.reloadData()
+
+            default:
+                break
+            }
+        }
     }
 
     private func cell(for collectionView: UICollectionView,
