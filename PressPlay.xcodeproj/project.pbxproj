@@ -24,6 +24,10 @@
 		2CA082A024B3456B00B5D6A3 /* Cuprum-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CA0829F24B3456B00B5D6A3 /* Cuprum-Regular.ttf */; };
 		2CA082A624B34F1500B5D6A3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA082A524B34F1500B5D6A3 /* HomeViewController.swift */; };
 		2CA082A824B3525500B5D6A3 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA082A724B3525500B5D6A3 /* MovieCollectionViewCell.swift */; };
+		2CA082AA24B36AC300B5D6A3 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA082A924B36AC300B5D6A3 /* Movie.swift */; };
+		2CA082AC24B36C9900B5D6A3 /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA082AB24B36C9900B5D6A3 /* Results.swift */; };
+		2CA082AE24B36D2900B5D6A3 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA082AD24B36D2900B5D6A3 /* APIController.swift */; };
+		B3005616DCBA4F00E1C1C990 /* Pods_PressPlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D4DD534F8E2F2DA1A077CC /* Pods_PressPlay.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +50,12 @@
 		2CA0829F24B3456B00B5D6A3 /* Cuprum-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cuprum-Regular.ttf"; sourceTree = "<group>"; };
 		2CA082A524B34F1500B5D6A3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2CA082A724B3525500B5D6A3 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
+		2CA082A924B36AC300B5D6A3 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		2CA082AB24B36C9900B5D6A3 /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
+		2CA082AD24B36D2900B5D6A3 /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
+		71D4DD534F8E2F2DA1A077CC /* Pods_PressPlay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PressPlay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7604A92B1E18BA45D91330CE /* Pods-PressPlay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PressPlay.debug.xcconfig"; path = "Target Support Files/Pods-PressPlay/Pods-PressPlay.debug.xcconfig"; sourceTree = "<group>"; };
+		D840A74ADC7470C4A6E4992A /* Pods-PressPlay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PressPlay.release.xcconfig"; path = "Target Support Files/Pods-PressPlay/Pods-PressPlay.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,17 +63,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3005616DCBA4F00E1C1C990 /* Pods_PressPlay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11281C7A291CD92FFF64E384 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				71D4DD534F8E2F2DA1A077CC /* Pods_PressPlay.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2CA0826124B33B6300B5D6A3 = {
 			isa = PBXGroup;
 			children = (
 				2CA0826C24B33B6300B5D6A3 /* PressPlay */,
 				2CA0826B24B33B6300B5D6A3 /* Products */,
+				BF9A4E7B12B1BE0E331D38AA /* Pods */,
+				11281C7A291CD92FFF64E384 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -153,6 +174,8 @@
 		2CA0828724B33CF900B5D6A3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2CA082A924B36AC300B5D6A3 /* Movie.swift */,
+				2CA082AB24B36C9900B5D6A3 /* Results.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -160,8 +183,19 @@
 		2CA0828824B33D0100B5D6A3 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				2CA082AD24B36D2900B5D6A3 /* APIController.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		BF9A4E7B12B1BE0E331D38AA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7604A92B1E18BA45D91330CE /* Pods-PressPlay.debug.xcconfig */,
+				D840A74ADC7470C4A6E4992A /* Pods-PressPlay.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,9 +205,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2CA0827E24B33B6500B5D6A3 /* Build configuration list for PBXNativeTarget "PressPlay" */;
 			buildPhases = (
+				A02D6ACC64360C9446A65C41 /* [CP] Check Pods Manifest.lock */,
 				2CA0826624B33B6300B5D6A3 /* Sources */,
 				2CA0826724B33B6300B5D6A3 /* Frameworks */,
 				2CA0826824B33B6300B5D6A3 /* Resources */,
+				C4E1836256668AF311A41769 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -240,15 +276,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A02D6ACC64360C9446A65C41 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PressPlay-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C4E1836256668AF311A41769 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PressPlay/Pods-PressPlay-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PressPlay/Pods-PressPlay-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PressPlay/Pods-PressPlay-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2CA0826624B33B6300B5D6A3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CA082AE24B36D2900B5D6A3 /* APIController.swift in Sources */,
+				2CA082AC24B36C9900B5D6A3 /* Results.swift in Sources */,
 				2CA082A824B3525500B5D6A3 /* MovieCollectionViewCell.swift in Sources */,
 				2CA0826E24B33B6300B5D6A3 /* AppDelegate.swift in Sources */,
 				2CA0827024B33B6300B5D6A3 /* SceneDelegate.swift in Sources */,
 				2CA082A624B34F1500B5D6A3 /* HomeViewController.swift in Sources */,
+				2CA082AA24B36AC300B5D6A3 /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +471,7 @@
 		};
 		2CA0827F24B33B6500B5D6A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7604A92B1E18BA45D91330CE /* Pods-PressPlay.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -408,6 +490,7 @@
 		};
 		2CA0828024B33B6500B5D6A3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D840A74ADC7470C4A6E4992A /* Pods-PressPlay.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

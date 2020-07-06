@@ -43,10 +43,8 @@ class APIController {
                 return
             }
 
-            let decoder = JSONDecoder()
-
             do {
-                let movies = try decoder.decode(Results.self, from: data)
+                let movies = try JSONDecoder().decode(Results.self, from: data)
                 DispatchQueue.main.async { completion(movies) }
             } catch {
                 NSLog("Error decoding movie data: \(error)")

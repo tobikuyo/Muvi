@@ -11,5 +11,7 @@ import UIKit
 class MovieCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet var posterImageView: UIImageView!
+
+    var movie: Movie?
     
 }
