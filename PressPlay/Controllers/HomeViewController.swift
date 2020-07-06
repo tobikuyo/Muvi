@@ -39,9 +39,20 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchAllSections()
+        setupViews()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 
     // MARK: - Methods
+
+    private func setupViews() {
+        navigationController?.overrideUserInterfaceStyle = .dark
+        trendingMovieImage.layer.cornerRadius = 5
+    }
 
     private func fetchAllSections() {
         fetchMovies(forSection: popular)
@@ -93,6 +104,44 @@ class HomeViewController: UIViewController {
         cell.movie = movie
         return cell
     }
+
+    private func checkForMore(_ movies: [Movie], for section: String, using pages: Int, at indexPath: IndexPath) {
+        if indexPath.item == movies.count - 1 {
+            self.loadMoreMovies(forSection: section, pages)
+        }
+    }
+
+    private func loadMoreMovies(forSection section: String, _ totalPages: Int) {
+        if page < totalPages {
+            page += 1
+            OperationQueue.main.addOperation {
+                APIController.shared.fetchMovies(forSection: section, on: self.page) { data in
+                    guard let data = data else { return }
+
+                    switch section {
+                    case self.popular:
+                        self.popularMovies += data.results
+                        self.popularCollectionView.reloadData()
+
+                    case self.topRated:
+                        self.topRatedMovies += data.results
+                        self.topRatedCollectionView.reloadData()
+
+                    case self.nowPlaying:
+                        self.nowPlayingMovies += data.results
+                        self.nowPlayingCollectionView.reloadData()
+
+                    case self.upcoming:
+                        self.upcomingMovies += data.results
+                        self.comingSoonCollectionView.reloadData()
+
+                    default:
+                        break
+                    }
+                }
+            }
+        }
+    }
 }
 
 extension HomeViewController: UICollectionViewDataSource {
@@ -122,5 +171,14 @@ extension HomeViewController: UICollectionViewDataSource {
         default:
             return UICollectionViewCell()
         }
+    }
+}
+
+extension HomeViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        checkForMore(popularMovies, for: popular, using: popularTotalPages, at: indexPath)
+        checkForMore(topRatedMovies, for: topRated, using: topRatedTotalPages, at: indexPath)
+        checkForMore(nowPlayingMovies, for: nowPlaying, using: nowPlayingTotalPages, at: indexPath)
+        checkForMore(upcomingMovies, for: upcoming, using: upcomingTotalPages, at: indexPath)
     }
 }
