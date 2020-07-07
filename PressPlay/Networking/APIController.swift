@@ -55,14 +55,16 @@ class APIController {
         }.resume()
     }
 
-    func fetchTrendingMovie(on page: Int, completion: @escaping (Results?) -> Void) {
+    func fetchTrendingMovies(on page: Int, completion: @escaping (Results?) -> Void) {
         let url = baseURL
             .appendingPathComponent("trending")
             .appendingPathComponent("movie")
             .appendingPathComponent("day")
 
         var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
-        components?.queryItems = [URLQueryItem(name: "api_key", value: apiKey)]
+        let apiKeyQuery = URLQueryItem(name: "api_key", value: apiKey)
+        let pageQuery = URLQueryItem(name: "page", value: page.description)
+        components?.queryItems = [apiKeyQuery, pageQuery]
 
         guard let requestURL = components?.url else {
             NSLog("Error with request URL")

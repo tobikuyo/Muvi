@@ -22,26 +22,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K0s-pW-yfd">
-                                <rect key="frame" x="0.0" y="88" width="414" height="1362"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="1328"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K3y-Uc-0rw">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1338"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1350.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RcR-7X-5iY">
                                                 <rect key="frame" x="20" y="20" width="374" height="207"/>
                                             </imageView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="XWf-kv-XGr" userLabel="Trending Stack View">
-                                                <rect key="frame" x="20" y="247" width="394" height="257"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="-25" translatesAutoresizingMaskIntoConstraints="NO" id="XWf-kv-XGr" userLabel="Trending Stack View">
+                                                <rect key="frame" x="20" y="247" width="394" height="277"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TRENDING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HrT-oS-UIJ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="83" height="20.5"/>
-                                                        <fontDescription key="fontDescription" name="PathwayGothicOne-Regular" family="Pathway Gothic One" pointSize="28"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="74.5" height="52"/>
+                                                        <fontDescription key="fontDescription" name="PathwayGothicOne-Regular" family="Pathway Gothic One" pointSize="25"/>
                                                         <color key="textColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YHo-qx-Vs0">
-                                                        <rect key="frame" x="0.0" y="28.5" width="388" height="228.5"/>
+                                                        <rect key="frame" x="0.0" y="27" width="388" height="250"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="250" id="8PY-D5-Ymu"/>
+                                                        </constraints>
                                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ITA-to-1cO">
                                                             <size key="itemSize" width="128" height="180"/>
                                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -50,7 +53,7 @@
                                                         </collectionViewFlowLayout>
                                                         <cells>
                                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TrendingCell" id="T5M-im-8xc" customClass="MovieCollectionViewCell" customModule="PressPlay" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="24.5" width="128" height="180"/>
+                                                                <rect key="frame" x="0.0" y="35" width="128" height="180"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="FuT-be-PG3">
                                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="180"/>
@@ -86,13 +89,13 @@
                                                 <rect key="frame" x="20" y="524" width="394" height="240"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="POPULAR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJk-N6-aLh">
-                                                        <rect key="frame" x="0.0" y="0.0" width="74.5" height="32.5"/>
-                                                        <fontDescription key="fontDescription" name="PathwayGothicOne-Regular" family="Pathway Gothic One" pointSize="28"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="66.5" height="29"/>
+                                                        <fontDescription key="fontDescription" name="PathwayGothicOne-Regular" family="Pathway Gothic One" pointSize="25"/>
                                                         <color key="textColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="A5g-tZ-e4i">
-                                                        <rect key="frame" x="0.0" y="40.5" width="388" height="199.5"/>
+                                                        <rect key="frame" x="0.0" y="37" width="388" height="203"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QfM-rh-aRL">
                                                             <size key="itemSize" width="128" height="180"/>
@@ -102,7 +105,7 @@
                                                         </collectionViewFlowLayout>
                                                         <cells>
                                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PopularCell" id="wZ7-x3-G3i" customClass="MovieCollectionViewCell" customModule="PressPlay" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="10" width="128" height="180"/>
+                                                                <rect key="frame" x="0.0" y="11.5" width="128" height="180"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="xRy-aA-obo">
                                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="180"/>
@@ -138,13 +141,13 @@
                                                 <rect key="frame" x="20" y="784" width="394" height="249"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOW PLAYING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWs-g7-xJC">
-                                                        <rect key="frame" x="0.0" y="0.0" width="113.5" height="32.5"/>
-                                                        <fontDescription key="fontDescription" name="PathwayGothicOne-Regular" family="Pathway Gothic One" pointSize="28"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="101.5" height="29"/>
+                                                        <fontDescription key="fontDescription" name="PathwayGothicOne-Regular" family="Pathway Gothic One" pointSize="25"/>
                                                         <color key="textColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Cuy-FW-Y79">
-                                                        <rect key="frame" x="0.0" y="40.5" width="388" height="208.5"/>
+                                                        <rect key="frame" x="0.0" y="37" width="388" height="212"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mll-YO-2GY">
                                                             <size key="itemSize" width="128" height="180"/>
@@ -154,7 +157,7 @@
                                                         </collectionViewFlowLayout>
                                                         <cells>
                                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NowPlayingCell" id="SXf-Dl-8JH" customClass="MovieCollectionViewCell" customModule="PressPlay" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="14.5" width="128" height="180"/>
+                                                                <rect key="frame" x="0.0" y="16" width="128" height="180"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="agU-pc-4SG">
                                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="180"/>
@@ -186,17 +189,17 @@
                                                     <constraint firstAttribute="trailing" secondItem="Cuy-FW-Y79" secondAttribute="trailing" constant="6" id="Zq9-vT-f3K"/>
                                                 </constraints>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="-25" translatesAutoresizingMaskIntoConstraints="NO" id="BkQ-iz-A4L" userLabel="Top Rated Stack View">
-                                                <rect key="frame" x="20" y="1053" width="394" height="285"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="-35" translatesAutoresizingMaskIntoConstraints="NO" id="BkQ-iz-A4L" userLabel="Top Rated Stack View">
+                                                <rect key="frame" x="20" y="1053" width="394" height="297.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOP RATED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ea5-vR-79r">
-                                                        <rect key="frame" x="0.0" y="0.0" width="85" height="32.5"/>
-                                                        <fontDescription key="fontDescription" name="PathwayGothicOne-Regular" family="Pathway Gothic One" pointSize="28"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="76" height="29"/>
+                                                        <fontDescription key="fontDescription" name="PathwayGothicOne-Regular" family="Pathway Gothic One" pointSize="25"/>
                                                         <color key="textColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ECy-U3-n1y">
-                                                        <rect key="frame" x="0.0" y="7.5" width="388" height="277.5"/>
+                                                        <rect key="frame" x="0.0" y="-6" width="388" height="303.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mTz-Hj-Jfs">
                                                             <size key="itemSize" width="128" height="180"/>
@@ -206,7 +209,7 @@
                                                         </collectionViewFlowLayout>
                                                         <cells>
                                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TopRatedCell" id="VKi-RB-8aA" customClass="MovieCollectionViewCell" customModule="PressPlay" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="49" width="128" height="180"/>
+                                                                <rect key="frame" x="0.0" y="62" width="128" height="180"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="LkY-OV-Y80">
                                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="180"/>
@@ -248,7 +251,7 @@
                                             <constraint firstAttribute="trailing" secondItem="RcR-7X-5iY" secondAttribute="trailing" constant="20" id="LVQ-nC-Iud"/>
                                             <constraint firstItem="dw4-Mk-7cA" firstAttribute="leading" secondItem="K3y-Uc-0rw" secondAttribute="leading" constant="20" id="Lr4-eM-YGq"/>
                                             <constraint firstAttribute="trailing" secondItem="dRc-Ka-414" secondAttribute="trailing" id="Msw-qf-TrP"/>
-                                            <constraint firstItem="dw4-Mk-7cA" firstAttribute="top" secondItem="XWf-kv-XGr" secondAttribute="bottom" constant="20" id="Qyj-Bg-Gzn"/>
+                                            <constraint firstItem="dw4-Mk-7cA" firstAttribute="top" secondItem="XWf-kv-XGr" secondAttribute="bottom" id="Qyj-Bg-Gzn"/>
                                             <constraint firstAttribute="trailing" secondItem="BkQ-iz-A4L" secondAttribute="trailing" id="YxZ-4h-Dm7"/>
                                             <constraint firstItem="dRc-Ka-414" firstAttribute="leading" secondItem="K3y-Uc-0rw" secondAttribute="leading" constant="20" id="aAH-GN-uhE"/>
                                             <constraint firstItem="RcR-7X-5iY" firstAttribute="top" secondItem="K3y-Uc-0rw" secondAttribute="top" constant="20" id="acA-BN-N7b"/>
@@ -266,10 +269,10 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="K3y-Uc-0rw" firstAttribute="height" secondItem="K0s-pW-yfd" secondAttribute="height" priority="250" constant="3" id="3Fx-Wj-rYI"/>
+                                    <constraint firstItem="K3y-Uc-0rw" firstAttribute="height" secondItem="K0s-pW-yfd" secondAttribute="height" priority="250" constant="6.5" id="3Fx-Wj-rYI"/>
                                     <constraint firstItem="K3y-Uc-0rw" firstAttribute="leading" secondItem="K0s-pW-yfd" secondAttribute="leading" id="4yP-47-Lst"/>
                                     <constraint firstAttribute="trailing" secondItem="K3y-Uc-0rw" secondAttribute="trailing" id="Sht-uY-J6c"/>
-                                    <constraint firstAttribute="bottom" secondItem="K3y-Uc-0rw" secondAttribute="bottom" constant="-3" id="XPZ-95-QaU"/>
+                                    <constraint firstAttribute="bottom" secondItem="K3y-Uc-0rw" secondAttribute="bottom" constant="-6.5" id="XPZ-95-QaU"/>
                                     <constraint firstItem="K3y-Uc-0rw" firstAttribute="top" secondItem="K0s-pW-yfd" secondAttribute="top" id="bPz-gL-Svi"/>
                                     <constraint firstItem="K3y-Uc-0rw" firstAttribute="width" secondItem="K0s-pW-yfd" secondAttribute="width" id="tig-Dc-QDD"/>
                                 </constraints>
@@ -278,7 +281,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.058229880136986344" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="K0s-pW-yfd" firstAttribute="leading" secondItem="OcS-gW-78I" secondAttribute="leading" id="VVx-lJ-svk"/>
-                            <constraint firstItem="K0s-pW-yfd" firstAttribute="bottom" secondItem="Zor-fP-LTr" secondAttribute="bottom" id="WBU-Bd-JLX"/>
+                            <constraint firstItem="K0s-pW-yfd" firstAttribute="bottom" secondItem="Zor-fP-LTr" secondAttribute="bottom" constant="-34" id="WBU-Bd-JLX"/>
                             <constraint firstItem="K0s-pW-yfd" firstAttribute="trailing" secondItem="OcS-gW-78I" secondAttribute="trailing" id="klV-3y-OzG"/>
                             <constraint firstItem="K0s-pW-yfd" firstAttribute="top" secondItem="OcS-gW-78I" secondAttribute="top" id="seI-Zv-zNO"/>
                         </constraints>

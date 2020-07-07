@@ -20,20 +20,19 @@ class HomeViewController: UIViewController {
     // MARK: - Properties
 
     private var page = 1
+    private var trendingPage = 1
     private var popularTotalPages = 0
-    private var topRatedTotalPages = 0
     private var nowPlayingTotalPages = 0
-    private var trendingTotalPages = 0
+    private var topRatedTotalPages = 0
 
-    private var popularMovies: [Movie] = []
-    private var topRatedMovies: [Movie] = []
-    private var nowPlayingMovies: [Movie] = []
     private var trendingMovies: [Movie] = []
+    private var popularMovies: [Movie] = []
+    private var nowPlayingMovies: [Movie] = []
+    private var topRatedMovies: [Movie] = []
 
     private let popular = "popular"
-    private let topRated = "top_rated"
     private let nowPlaying = "now_playing"
-    private let trending = "trending"
+    private let topRated = "top_rated"
 
     private var trendingMovie: Movie? {
         didSet {
@@ -63,19 +62,18 @@ class HomeViewController: UIViewController {
     }
 
     private func fetchTrendingMovies() {
-        APIController.shared.fetchTrendingMovie(on: page) { data in
+        APIController.shared.fetchTrendingMovies(on: trendingPage) { data in
             guard let data = data else { return }
             self.trendingMovies = data.results
-            self.trendingMovie = data.results[Int.random(in: 5...15)]
-            self.trendingTotalPages = data.totalPages
+            self.trendingMovie = data.results[Int.random(in: 3...19)]
             self.trendingCollectionView.reloadData()
         }
     }
 
     private func fetchAllSections() {
         fetchMovies(forSection: popular)
-        fetchMovies(forSection: topRated)
         fetchMovies(forSection: nowPlaying)
+        fetchMovies(forSection: topRated)
     }
 
     private func fetchMovies(forSection section: String, onPage: Int = 1) {
@@ -88,35 +86,29 @@ class HomeViewController: UIViewController {
                 self.popularTotalPages = data.totalPages
                 self.popularCollectionView.reloadData()
 
-            case self.topRated:
-                self.topRatedMovies = data.results
-                self.topRatedTotalPages = data.totalPages
-                self.topRatedCollectionView.reloadData()
-
-            default:
+            case self.nowPlaying:
                 self.nowPlayingMovies = data.results
                 self.nowPlayingTotalPages = data.totalPages
                 self.nowPlayingCollectionView.reloadData()
+
+            default:
+                self.topRatedMovies = data.results
+                self.topRatedTotalPages = data.totalPages
+                self.topRatedCollectionView.reloadData()
             }
         }
     }
 
-    private func checkForMore(_ movies: [Movie],
-                              using pages: Int,
-                              at indexPath: IndexPath) {
-        if indexPath.item == trendingMovies.count - 1{
-            loadMoreTrendingMovies()
-        }
-    }
-
-    func loadMoreTrendingMovies() {
-        if page < trendingTotalPages {
-            page += 1
-            OperationQueue.main.addOperation {
-                APIController.shared.fetchTrendingMovie(on: self.page) { data in
-                    guard let data = data else { return }
-                    self.trendingMovies += data.results
-                    self.trendingCollectionView.reloadData()
+    private func checkForMore(_ movies: [Movie], at indexPath: IndexPath) {
+        if indexPath.item == trendingMovies.count - 1 {
+            if trendingPage < 3  {
+                trendingPage += 1
+                OperationQueue.main.addOperation {
+                    APIController.shared.fetchTrendingMovies(on: self.trendingPage) { data in
+                        guard let data = data else { return }
+                        self.trendingMovies += data.results
+                        self.trendingCollectionView.reloadData()
+                    }
                 }
             }
         }
@@ -127,11 +119,11 @@ class HomeViewController: UIViewController {
                               using pages: Int,
                               at indexPath: IndexPath) {
         if indexPath.item == movies.count - 1 {
-            self.loadMoreMovies(forSection: section, pages)
+            loadMoreMovies(for: section, using: pages)
         }
     }
 
-    private func loadMoreMovies(forSection section: String, _ totalPages: Int) {
+    private func loadMoreMovies(for section: String, using totalPages: Int) {
         if page < totalPages {
             page += 1
             OperationQueue.main.addOperation {
@@ -143,13 +135,13 @@ class HomeViewController: UIViewController {
                         self.popularMovies += data.results
                         self.popularCollectionView.reloadData()
 
-                    case self.topRated:
-                        self.topRatedMovies += data.results
-                        self.topRatedCollectionView.reloadData()
-
-                    default:
+                    case self.nowPlaying:
                         self.nowPlayingMovies += data.results
                         self.nowPlayingCollectionView.reloadData()
+
+                    default:
+                        self.topRatedMovies += data.results
+                        self.topRatedCollectionView.reloadData()
                     }
                 }
             }
@@ -159,7 +151,7 @@ class HomeViewController: UIViewController {
     private func cell(for collectionView: UICollectionView,
                       with movies: [Movie],
                       andIdentifier identifier: String,
-                      for indexPath: IndexPath) -> UICollectionViewCell {
+                      at indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as? MovieCollectionViewCell else {
             return UICollectionViewCell()
         }
@@ -177,23 +169,23 @@ extension HomeViewController: UICollectionViewDataSource {
             return trendingMovies.count
         case popularCollectionView:
             return popularMovies.count
-        case nowPlayingCollectionView:
-            return nowPlayingMovies.count
-        default:
+        case topRatedCollectionView:
             return topRatedMovies.count
+        default:
+            return nowPlayingMovies.count
         }
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch collectionView {
         case trendingCollectionView:
-            return cell(for: trendingCollectionView, with: trendingMovies, andIdentifier: "TrendingCell", for: indexPath)
+            return cell(for: trendingCollectionView, with: trendingMovies, andIdentifier: "TrendingCell", at: indexPath)
         case popularCollectionView:
-            return cell(for: popularCollectionView, with: popularMovies, andIdentifier: "PopularCell", for: indexPath)
+            return cell(for: popularCollectionView, with: popularMovies, andIdentifier: "PopularCell", at: indexPath)
         case nowPlayingCollectionView:
-            return cell(for: nowPlayingCollectionView, with: nowPlayingMovies, andIdentifier: "NowPlayingCell", for: indexPath)
+            return cell(for: nowPlayingCollectionView, with: nowPlayingMovies, andIdentifier: "NowPlayingCell", at: indexPath)
         default:
-            return cell(for: topRatedCollectionView, with: topRatedMovies, andIdentifier: "TopRatedCell", for: indexPath)
+            return cell(for: topRatedCollectionView, with: topRatedMovies, andIdentifier: "TopRatedCell", at: indexPath)
         }
     }
 }
@@ -202,9 +194,9 @@ extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView,
                         willDisplay cell: UICollectionViewCell,
                         forItemAt indexPath: IndexPath) {
+        checkForMore(trendingMovies, at: indexPath)
         checkForMore(popularMovies, for: popular, using: popularTotalPages, at: indexPath)
-        checkForMore(topRatedMovies, for: topRated, using: topRatedTotalPages, at: indexPath)
         checkForMore(nowPlayingMovies, for: nowPlaying, using: nowPlayingTotalPages, at: indexPath)
-        checkForMore(trendingMovies, using: trendingTotalPages, at: indexPath)
+        checkForMore(topRatedMovies, for: topRated, using: topRatedTotalPages, at: indexPath)
     }
 }
