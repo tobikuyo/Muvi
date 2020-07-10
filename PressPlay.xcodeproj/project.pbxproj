@@ -12,6 +12,7 @@
 		2C10499724B490E800F32489 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10499624B490E800F32489 /* Genre.swift */; };
 		2C69D1AD24B8FC8800186620 /* Cast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C69D1AC24B8FC8800186620 /* Cast.swift */; };
 		2C69D1AF24B8FE5700186620 /* Credits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C69D1AE24B8FE5700186620 /* Credits.swift */; };
+		2C69D1B124B9007A00186620 /* CastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C69D1B024B9007A00186620 /* CastCollectionViewCell.swift */; };
 		2C796E6724B543FA00D83304 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C796E6624B543FA00D83304 /* MovieDetailViewController.swift */; };
 		2C796E9224B87D8D00D83304 /* Teko-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C796E9024B87D8D00D83304 /* Teko-Regular.ttf */; };
 		2C796E9324B87D8D00D83304 /* Teko-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C796E9124B87D8D00D83304 /* Teko-Light.ttf */; };
@@ -44,6 +45,7 @@
 		2C10499624B490E800F32489 /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		2C69D1AC24B8FC8800186620 /* Cast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cast.swift; sourceTree = "<group>"; };
 		2C69D1AE24B8FE5700186620 /* Credits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credits.swift; sourceTree = "<group>"; };
+		2C69D1B024B9007A00186620 /* CastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastCollectionViewCell.swift; sourceTree = "<group>"; };
 		2C796E6624B543FA00D83304 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		2C796E9024B87D8D00D83304 /* Teko-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Teko-Regular.ttf"; sourceTree = "<group>"; };
 		2C796E9124B87D8D00D83304 /* Teko-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Teko-Light.ttf"; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				2CA082A724B3525500B5D6A3 /* MovieCollectionViewCell.swift */,
+				2C69D1B024B9007A00186620 /* CastCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C10499724B490E800F32489 /* Genre.swift in Sources */,
+				2C69D1B124B9007A00186620 /* CastCollectionViewCell.swift in Sources */,
 				2C10499324B3AFD600F32489 /* String+Extension.swift in Sources */,
 				2CA082AE24B36D2900B5D6A3 /* APIController.swift in Sources */,
 				2CA082AC24B36C9900B5D6A3 /* Results.swift in Sources */,
