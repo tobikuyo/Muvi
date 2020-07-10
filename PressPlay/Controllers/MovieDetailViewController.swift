@@ -7,11 +7,10 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MovieDetailViewController: UIViewController {
 
-    @IBOutlet var backButtonView: UIView!
-    @IBOutlet var saveButtonView: UIView!
     @IBOutlet var backdropImageView: UIImageView!
     @IBOutlet var detailView: UIView!
     @IBOutlet var titleLabel: UILabel!
@@ -25,9 +24,24 @@ class MovieDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateViews()
+    }
 
-        backButtonView.layer.cornerRadius = 8
-        saveButtonView.layer.cornerRadius = 8
+    private func setupViews() {
+        detailView.layer.cornerRadius = 10
+        backdropImageView.layer.cornerRadius = 10
+    }
+
+    private func updateViews() {
+        guard let movie = movie else { return }
+        APIController.shared.getDetails(for: movie) { movie in
+            if let movie = movie {
+                self.backdropImageView.kf.setImage(with: movie.backdrop?.url)
+                self.titleLabel.text = movie.title?.uppercased()
+                self.runtimeLabel.text = "\(String(describing: movie.runtime!)) MIN"
+                self.overviewTextView.text = movie.overview
+            }
+        }
     }
 
     @IBAction func backButtonTapped(_ sender: Any) {

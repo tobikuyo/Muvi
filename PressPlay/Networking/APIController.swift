@@ -94,4 +94,46 @@ class APIController {
             }
         }.resume()
     }
+
+    func getDetails(for movie: Movie, completion: @escaping (Movie?) -> Void) {
+        let url = baseURL
+            .appendingPathComponent("movie")
+            .appendingPathComponent(movie.id!.description)
+
+        var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
+        let apiKeyQuery = URLQueryItem(name: "api_key", value: apiKey)
+        components?.queryItems = [apiKeyQuery]
+
+        guard let requestURL = components?.url else {
+            NSLog("Error with request URL to get details")
+            completion(nil)
+            return
+        }
+
+        URLSession.shared.dataTask(with: requestURL) { data, _, error in
+            if let error = error {
+                NSLog("Error with request to fetch movie details: \(error)")
+                completion(nil)
+                return
+            }
+
+            guard let data = data else {
+                NSLog("No movie data returned from data task")
+                completion(nil)
+                return
+            }
+
+            do {
+                let movie = try JSONDecoder().decode(Movie.self, from: data)
+                DispatchQueue.main.async { completion(movie) }
+            } catch {
+                NSLog("Error decoding movie data: \(error)")
+                completion(nil)
+            }
+        }.resume()
+    }
+
+    func getCast(for movie: Movie, completion: @escaping () -> Void) {
+
+    }
 }

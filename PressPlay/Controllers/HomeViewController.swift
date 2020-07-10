@@ -33,7 +33,7 @@ class HomeViewController: UIViewController {
     private let popular = "popular"
     private let nowPlaying = "now_playing"
     private let topRated = "top_rated"
-    private let showDetailSegue = "ShowDetailSegue"
+    private let showTrendingSegue = "TrendingMovieSegue"
 
     private var trendingMovie: Movie? {
         didSet {
@@ -58,7 +58,7 @@ class HomeViewController: UIViewController {
     // MARK: - Methods
 
     @objc func trendingImageTapped() {
-        performSegue(withIdentifier: showDetailSegue, sender: self)
+        performSegue(withIdentifier: showTrendingSegue, sender: self)
     }
 
     private func setupViews() {
@@ -159,24 +159,35 @@ class HomeViewController: UIViewController {
 
     // MARK: - Navigation
 
-    private func prepare(_ segue: UIStoryboardSegue, for collectionView: UICollectionView, using movies: [Movie]) {
-        if segue.identifier == showDetailSegue {
-            guard let destinationVC = segue.destination as? MovieDetailViewController else { return }
-
-            if let indexPath = collectionView.indexPathsForSelectedItems?.first {
-                let movie = movies[indexPath.item]
-                destinationVC.movie = movie
-            } else {
+    private func prepare(_ segue: UIStoryboardSegue,
+                         for collectionView: UICollectionView,
+                         using cell: UICollectionViewCell,
+                         and tag: Int,
+                         for movies: [Movie]) {
+        switch segue.identifier {
+        case showTrendingSegue:
+            if let destinationVC = segue.destination as? MovieDetailViewController {
                 destinationVC.movie = trendingMovie
+            }
+
+        default:
+            if cell.tag == tag {
+                if let destinationVC = segue.destination as? MovieDetailViewController,
+                    let indexPath = collectionView.indexPathsForSelectedItems?.first {
+                    let movie = movies[indexPath.item]
+                    destinationVC.movie = movie
+                }
             }
         }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        prepare(segue, for: trendingCollectionView, using: trendingMovies)
-        prepare(segue, for: popularCollectionView, using: popularMovies)
-        prepare(segue, for: nowPlayingCollectionView, using: nowPlayingMovies)
-        prepare(segue, for: topRatedCollectionView, using: topRatedMovies)
+        let collectionView = sender as! UICollectionViewCell
+
+        prepare(segue, for: trendingCollectionView, using: collectionView, and: 0, for: trendingMovies)
+        prepare(segue, for: popularCollectionView, using: collectionView, and: 1, for: popularMovies)
+        prepare(segue, for: nowPlayingCollectionView, using: collectionView, and: 2, for: nowPlayingMovies)
+        prepare(segue, for: topRatedCollectionView, using: collectionView, and: 3, for: topRatedMovies)
     }
 }
 
@@ -229,9 +240,5 @@ extension HomeViewController: UICollectionViewDelegate {
         checkForMore(popularMovies, for: popular, using: popularTotalPages, at: indexPath)
         checkForMore(nowPlayingMovies, for: nowPlaying, using: nowPlayingTotalPages, at: indexPath)
         checkForMore(topRatedMovies, for: topRated, using: topRatedTotalPages, at: indexPath)
-    }
-
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "ShowDetailSegue", sender: self)
     }
 }
