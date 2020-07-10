@@ -49,7 +49,7 @@ class APIController {
                 let movies = try JSONDecoder().decode(Results.self, from: data)
                 DispatchQueue.main.async { completion(movies) }
             } catch {
-                NSLog("Error decoding movie data: \(error)")
+                NSLog("Error decoding movies data: \(error)")
                 completion(nil)
             }
         }.resume()
@@ -89,7 +89,7 @@ class APIController {
                 let movies = try JSONDecoder().decode(Results.self, from: data)
                 DispatchQueue.main.async { completion(movies) }
             } catch {
-                NSLog("Error decoding movie data: \(error)")
+                NSLog("Error decoding trending movies data: \(error)")
                 completion(nil)
             }
         }.resume()
@@ -127,13 +127,48 @@ class APIController {
                 let movie = try JSONDecoder().decode(Movie.self, from: data)
                 DispatchQueue.main.async { completion(movie) }
             } catch {
-                NSLog("Error decoding movie data: \(error)")
+                NSLog("Error decoding movie details data: \(error)")
                 completion(nil)
             }
         }.resume()
     }
 
-    func getCast(for movie: Movie, completion: @escaping () -> Void) {
+    func getCast(for movie: Movie, completion: @escaping (Credits?) -> Void) {
+        let url = baseURL
+            .appendingPathComponent("movie")
+            .appendingPathComponent(movie.id!.description)
+            .appendingPathComponent("credits")
 
+        var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
+        let apiKeyQuery = URLQueryItem(name: "api_key", value: apiKey)
+        components?.queryItems = [apiKeyQuery]
+
+        guard let requestURL = components?.url else {
+            NSLog("Error with request URL to get cast")
+            completion(nil)
+            return
+        }
+
+        URLSession.shared.dataTask(with: requestURL) { data, _, error in
+            if let error = error {
+                NSLog("Error with request to fetch cast details: \(error)")
+                completion(nil)
+                return
+            }
+
+            guard let data = data else {
+                NSLog("No cast data returned from data task")
+                completion(nil)
+                return
+            }
+
+            do {
+                let cast = try JSONDecoder().decode(Credits.self, from: data)
+                DispatchQueue.main.async { completion(cast) }
+            } catch {
+                NSLog("Error decoding cast data: \(error)")
+                completion(nil)
+            }
+        }.resume()
     }
 }
