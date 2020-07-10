@@ -164,30 +164,26 @@ class HomeViewController: UIViewController {
                          using cell: UICollectionViewCell,
                          and tag: Int,
                          for movies: [Movie]) {
-        switch segue.identifier {
-        case showTrendingSegue:
-            if let destinationVC = segue.destination as? MovieDetailViewController {
-                destinationVC.movie = trendingMovie
-            }
-
-        default:
-            if cell.tag == tag {
-                if let destinationVC = segue.destination as? MovieDetailViewController,
-                    let indexPath = collectionView.indexPathsForSelectedItems?.first {
-                    let movie = movies[indexPath.item]
-                    destinationVC.movie = movie
-                }
+        if cell.tag == tag {
+            if let destinationVC = segue.destination as? MovieDetailViewController,
+                let indexPath = collectionView.indexPathsForSelectedItems?.first {
+                let movie = movies[indexPath.item]
+                destinationVC.movie = movie
             }
         }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let collectionView = sender as! UICollectionViewCell
-
-        prepare(segue, for: trendingCollectionView, using: collectionView, and: 0, for: trendingMovies)
-        prepare(segue, for: popularCollectionView, using: collectionView, and: 1, for: popularMovies)
-        prepare(segue, for: nowPlayingCollectionView, using: collectionView, and: 2, for: nowPlayingMovies)
-        prepare(segue, for: topRatedCollectionView, using: collectionView, and: 3, for: topRatedMovies)
+        if segue.identifier == showTrendingSegue {
+            guard let destinationVC = segue.destination as? MovieDetailViewController else { return }
+            destinationVC.movie = trendingMovie
+        } else {
+            let collectionView = sender as! UICollectionViewCell
+            prepare(segue, for: trendingCollectionView, using: collectionView, and: 0, for: trendingMovies)
+            prepare(segue, for: popularCollectionView, using: collectionView, and: 1, for: popularMovies)
+            prepare(segue, for: nowPlayingCollectionView, using: collectionView, and: 2, for: nowPlayingMovies)
+            prepare(segue, for: topRatedCollectionView, using: collectionView, and: 3, for: topRatedMovies)
+        }
     }
 }
 
