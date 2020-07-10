@@ -8,20 +8,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="FiraSansExtraCondensed-Regular.ttf">
+            <string>FiraSansExtraCondensed-Regular</string>
+        </array>
         <array key="Oswald-Bold.ttf">
             <string>Oswald-Bold</string>
         </array>
-        <array key="Oswald-Medium.ttf">
-            <string>Oswald-Medium</string>
-        </array>
         <array key="PathwayGothicOne-Regular.ttf">
             <string>PathwayGothicOne-Regular</string>
-        </array>
-        <array key="Teko-Light.ttf">
-            <string>Teko-Light</string>
-        </array>
-        <array key="Teko-Regular.ttf">
-            <string>Teko-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -352,30 +346,24 @@
                                 </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="Teko-Light" family="Teko" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="FiraSansExtraCondensed-Regular" family="Fira Sans Extra Condensed" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CAST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bar-BV-qs1">
-                                <rect key="frame" x="20" y="658.66666666666663" width="374" height="29.666666666666629"/>
-                                <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RBm-6V-Dab">
-                                <rect key="frame" x="20" y="708.33333333333337" width="394" height="133.66666666666663"/>
+                                <rect key="frame" x="20" y="668.66666666666663" width="394" height="173.33333333333337"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VF6-Uc-TfS">
-                                    <size key="itemSize" width="119" height="129.5"/>
+                                    <size key="itemSize" width="119" height="153"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CastCell" id="bZK-YF-bZM" customClass="CastCollectionViewCell" customModule="PressPlay" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="2" width="119" height="129.5"/>
+                                        <rect key="frame" x="0.0" y="10.333333333333334" width="119" height="153"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3F6-nX-alp">
-                                            <rect key="frame" x="0.0" y="0.0" width="119" height="129.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="119" height="153"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aMJ-7T-vtW">
@@ -385,9 +373,9 @@
                                                         <constraint firstAttribute="width" secondItem="aMJ-7T-vtW" secondAttribute="height" multiplier="1:1" id="Koc-lZ-oxh"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Actor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="pTB-kF-90E">
-                                                    <rect key="frame" x="8" y="92.666666666666671" width="103" height="29"/>
-                                                    <fontDescription key="fontDescription" name="Teko-Regular" family="Teko" pointSize="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Actor" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="pTB-kF-90E">
+                                                    <rect key="frame" x="8" y="92.666666666666671" width="103" height="52.333333333333329"/>
+                                                    <fontDescription key="fontDescription" name="FiraSansExtraCondensed-Regular" family="Fira Sans Extra Condensed" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -402,7 +390,7 @@
                                                 <constraint firstItem="aMJ-7T-vtW" firstAttribute="top" secondItem="3F6-nX-alp" secondAttribute="top" constant="4" id="w2o-qM-xYI"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="119" height="129.5"/>
+                                        <size key="customSize" width="119" height="153"/>
                                         <connections>
                                             <outlet property="actorImageView" destination="aMJ-7T-vtW" id="kDR-zs-c55"/>
                                             <outlet property="actorNameLabel" destination="pTB-kF-90E" id="eod-dJ-FJ2"/>
@@ -448,7 +436,7 @@
                                     <action selector="saveButtonTapped:" destination="Bue-f5-iip" eventType="touchUpInside" id="aHK-j4-K8U"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="TITLE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="HR8-pJ-Hne">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="TITLE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="HR8-pJ-Hne">
                                 <rect key="frame" x="20" y="330" width="374" height="44.666666666666686"/>
                                 <fontDescription key="fontDescription" name="Oswald-Bold" family="Oswald" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -496,13 +484,10 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="OqF-aJ-H7f" firstAttribute="trailing" secondItem="Bar-BV-qs1" secondAttribute="trailing" constant="20" id="21t-2b-x4O"/>
                             <constraint firstItem="OqF-aJ-H7f" firstAttribute="trailing" secondItem="RBm-6V-Dab" secondAttribute="trailing" id="23b-Dt-6fg"/>
-                            <constraint firstItem="Bar-BV-qs1" firstAttribute="leading" secondItem="OqF-aJ-H7f" secondAttribute="leading" constant="20" id="2dt-Nb-ce1"/>
                             <constraint firstItem="gJ5-j3-oVM" firstAttribute="leading" secondItem="OqF-aJ-H7f" secondAttribute="leading" id="5KK-Vd-dMn"/>
                             <constraint firstItem="SDq-df-lGO" firstAttribute="centerY" secondItem="4HI-bI-GHo" secondAttribute="centerY" id="Jkm-B4-pTR"/>
                             <constraint firstItem="OqF-aJ-H7f" firstAttribute="trailing" secondItem="HR8-pJ-Hne" secondAttribute="trailing" constant="20" id="MB2-qP-Emk"/>
-                            <constraint firstItem="RBm-6V-Dab" firstAttribute="top" secondItem="Bar-BV-qs1" secondAttribute="bottom" constant="20" id="MXP-JN-HRH"/>
                             <constraint firstItem="qDB-Q4-dWX" firstAttribute="centerX" secondItem="JnX-Hw-nTz" secondAttribute="centerX" id="MrV-k8-2N9"/>
                             <constraint firstItem="OqF-aJ-H7f" firstAttribute="bottom" secondItem="RBm-6V-Dab" secondAttribute="bottom" constant="20" id="OIy-AR-L8i"/>
                             <constraint firstItem="J6X-ut-t8f" firstAttribute="centerY" secondItem="McK-Bw-CsP" secondAttribute="centerY" id="OX8-aR-BfB"/>
@@ -522,10 +507,10 @@
                             <constraint firstItem="y1W-0P-rES" firstAttribute="leading" secondItem="OqF-aJ-H7f" secondAttribute="leading" constant="20" id="bCS-et-n8Y"/>
                             <constraint firstItem="4HI-bI-GHo" firstAttribute="centerX" secondItem="S0U-Mk-uNN" secondAttribute="centerX" id="dAG-Wr-xza"/>
                             <constraint firstItem="vcf-wD-C2d" firstAttribute="centerX" secondItem="SDq-df-lGO" secondAttribute="centerX" id="gDc-En-f4v"/>
-                            <constraint firstItem="Bar-BV-qs1" firstAttribute="top" secondItem="y1W-0P-rES" secondAttribute="bottom" constant="20" id="gLQ-Lq-QNp"/>
                             <constraint firstItem="SDq-df-lGO" firstAttribute="leading" secondItem="4HI-bI-GHo" secondAttribute="trailing" constant="64" id="hom-aw-fwY"/>
                             <constraint firstItem="JnX-Hw-nTz" firstAttribute="centerY" secondItem="4HI-bI-GHo" secondAttribute="centerY" id="l7P-WD-faK"/>
                             <constraint firstItem="KLI-av-C1j" firstAttribute="top" secondItem="4HI-bI-GHo" secondAttribute="bottom" constant="15" id="nGo-va-DTG"/>
+                            <constraint firstItem="RBm-6V-Dab" firstAttribute="top" secondItem="y1W-0P-rES" secondAttribute="bottom" constant="30" id="qso-g5-2Yx"/>
                             <constraint firstItem="KLI-av-C1j" firstAttribute="leading" secondItem="qDB-Q4-dWX" secondAttribute="trailing" constant="18" id="v9h-cK-lSM"/>
                             <constraint firstItem="RBm-6V-Dab" firstAttribute="leading" secondItem="OqF-aJ-H7f" secondAttribute="leading" constant="20" id="vSu-0R-2rX"/>
                             <constraint firstAttribute="trailing" secondItem="gJ5-j3-oVM" secondAttribute="trailing" id="wFD-pI-iZ8"/>

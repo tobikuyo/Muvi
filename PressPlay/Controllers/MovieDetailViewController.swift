@@ -25,6 +25,7 @@ class MovieDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
+        textViewSetup()
         getCast()
     }
 
@@ -44,6 +45,18 @@ class MovieDetailViewController: UIViewController {
                 self.overviewTextView.text = movie.overview
             }
         }
+    }
+
+    private func textViewSetup() {
+        guard let movie = movie else { return }
+
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 8
+
+        let attributes = [NSAttributedString.Key.paragraphStyle: style]
+        overviewTextView.attributedText = NSAttributedString(string: movie.overview!, attributes: attributes)
+        overviewTextView.font = UIFont(name: "FiraSansExtraCondensed-Regular", size: 19)
+        overviewTextView.textAlignment = .center
     }
 
     private func getCast() {
