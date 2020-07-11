@@ -15,6 +15,7 @@ class SearchViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
 
     private var movies: [Movie] = []
+    private var totalPages = 0
     private var page = 1
 
     override func viewDidLoad() {
@@ -52,6 +53,24 @@ extension SearchViewController: UITableViewDataSource {
     }
 }
 
+extension SearchViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.item == movies.count - 1 {
+            if page < totalPages {
+                page += 1
+                OperationQueue.main.addOperation {
+                    guard let query = self.searchBar.text else { return }
+                    APIController.shared.searchForMovie(called: query, on: self.page) { data in
+                        guard let data = data else { return }
+                        self.movies += data.results
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        }
+    }
+}
+
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
@@ -60,6 +79,7 @@ extension SearchViewController: UISearchBarDelegate {
         APIController.shared.searchForMovie(called: query, on: page) { data in
             if let data = data {
                 self.movies = data.results
+                self.totalPages = data.totalPages
                 self.tableView.reloadData()
             }
         }
