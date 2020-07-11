@@ -14,7 +14,7 @@ class APIController {
 
     static let shared = APIController()
 
-    private let baseURL = URL(string: "https://api.themoviedb.org/3/")!
+    private let baseURL = URL(string: "https://api.themoviedb.org/3")!
     private let apiKey = "435b8518a5ca880ce95403657741f93d"
 
     func fetchMovies(forSection section: String, on page: Int, completion: @escaping (Results?) -> Void) {
@@ -167,6 +167,46 @@ class APIController {
                 DispatchQueue.main.async { completion(cast) }
             } catch {
                 NSLog("Error decoding cast data: \(error)")
+                completion(nil)
+            }
+        }.resume()
+    }
+
+    func searchForMovie(called name: String, on page: Int, completion: @escaping (Results?) -> Void) {
+        let url = baseURL
+            .appendingPathComponent("search")
+            .appendingPathComponent("movie")
+
+        var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
+        let apiKeyQuery = URLQueryItem(name: "api_key", value: apiKey)
+        let movieQuery = URLQueryItem(name: "query", value: name)
+        let pageQuery = URLQueryItem(name: "page", value: page.description)
+        components?.queryItems = [apiKeyQuery, movieQuery, pageQuery]
+
+        guard let requestURL = components?.url else {
+            NSLog("Error with request URL to search \(name)")
+            completion(nil)
+            return
+        }
+
+        URLSession.shared.dataTask(with: requestURL) { data, _, error in
+            if let error = error {
+                NSLog("Error with request to search \(name): \(error)")
+                completion(nil)
+                return
+            }
+
+            guard let data = data else {
+                NSLog("No search results returned")
+                completion(nil)
+                return
+            }
+
+            do {
+                let movies = try JSONDecoder().decode(Results.self, from: data)
+                DispatchQueue.main.async { completion(movies) }
+            } catch {
+                NSLog("Error decoding search results: \(error)")
                 completion(nil)
             }
         }.resume()
