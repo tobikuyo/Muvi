@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import DZNEmptyDataSet
 
 class HomeViewController: UIViewController {
 
@@ -236,5 +237,18 @@ extension HomeViewController: UICollectionViewDelegate {
         checkForMore(popularMovies, for: popular, using: popularTotalPages, at: indexPath)
         checkForMore(nowPlayingMovies, for: nowPlaying, using: nowPlayingTotalPages, at: indexPath)
         checkForMore(topRatedMovies, for: topRated, using: topRatedTotalPages, at: indexPath)
+    }
+}
+
+extension HomeViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        let str = "NO INTERNET CONNECTION"
+        let attrs = [NSAttributedString.Key.font: UIFont(name: "PathwayGothicOne-Regular", size: 20)!,
+                     NSAttributedString.Key.foregroundColor: UIColor.white]
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+
+    func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
+        return UIImage(named: "noInternet")
     }
 }
