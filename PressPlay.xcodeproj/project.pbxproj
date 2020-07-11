@@ -16,6 +16,10 @@
 		2C69D1BA24B9117200186620 /* FiraSansExtraCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C69D1B724B9117100186620 /* FiraSansExtraCondensed-Regular.ttf */; };
 		2C69D1BB24B9117200186620 /* FiraSansExtraCondensed-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C69D1B824B9117100186620 /* FiraSansExtraCondensed-Medium.ttf */; };
 		2C69D1BC24B9117200186620 /* FiraSansExtraCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C69D1B924B9117200186620 /* FiraSansExtraCondensed-Light.ttf */; };
+		2C70175424BA03EF008D9EF5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C70175324BA03EF008D9EF5 /* SearchViewController.swift */; };
+		2C70175624BA055B008D9EF5 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C70175524BA055B008D9EF5 /* SearchTableViewCell.swift */; };
+		2C70175924BA0715008D9EF5 /* GenreConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C70175824BA0715008D9EF5 /* GenreConvert.swift */; };
+		2C70175B24BA2E5B008D9EF5 /* HomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C70175A24BA2E4D008D9EF5 /* HomeScreen.storyboard */; };
 		2C796E6724B543FA00D83304 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C796E6624B543FA00D83304 /* MovieDetailViewController.swift */; };
 		2C796E9224B87D8D00D83304 /* Teko-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C796E9024B87D8D00D83304 /* Teko-Regular.ttf */; };
 		2C796E9324B87D8D00D83304 /* Teko-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C796E9124B87D8D00D83304 /* Teko-Light.ttf */; };
@@ -48,6 +52,10 @@
 		2C69D1B724B9117100186620 /* FiraSansExtraCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraSansExtraCondensed-Regular.ttf"; sourceTree = "<group>"; };
 		2C69D1B824B9117100186620 /* FiraSansExtraCondensed-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraSansExtraCondensed-Medium.ttf"; sourceTree = "<group>"; };
 		2C69D1B924B9117200186620 /* FiraSansExtraCondensed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraSansExtraCondensed-Light.ttf"; sourceTree = "<group>"; };
+		2C70175324BA03EF008D9EF5 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		2C70175524BA055B008D9EF5 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		2C70175824BA0715008D9EF5 /* GenreConvert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreConvert.swift; sourceTree = "<group>"; };
+		2C70175A24BA2E4D008D9EF5 /* HomeScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = HomeScreen.storyboard; path = /Users/tobikuyo/Documents/ios/PressPlay/PressPlay/Storyboards/HomeScreen.storyboard; sourceTree = "<absolute>"; };
 		2C796E6624B543FA00D83304 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		2C796E9024B87D8D00D83304 /* Teko-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Teko-Regular.ttf"; sourceTree = "<group>"; };
 		2C796E9124B87D8D00D83304 /* Teko-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Teko-Light.ttf"; sourceTree = "<group>"; };
@@ -94,6 +102,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2C70175724BA0702008D9EF5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2C70175824BA0715008D9EF5 /* GenreConvert.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		2CA0826124B33B6300B5D6A3 = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +138,7 @@
 				2CA0828624B33CF400B5D6A3 /* Views */,
 				2CA0828524B33CEE00B5D6A3 /* Controllers */,
 				2CA0828424B33CE800B5D6A3 /* Fonts */,
+				2C70175724BA0702008D9EF5 /* Helpers */,
 				2CA0828324B33CD300B5D6A3 /* Extensions */,
 			);
 			path = PressPlay;
@@ -143,6 +160,7 @@
 			children = (
 				2CA0827824B33B6500B5D6A3 /* LaunchScreen.storyboard */,
 				2CA0827324B33B6300B5D6A3 /* Main.storyboard */,
+				2C70175A24BA2E4D008D9EF5 /* HomeScreen.storyboard */,
 				2C69D1B524B90DC000186620 /* Search.storyboard */,
 			);
 			path = Storyboards;
@@ -179,6 +197,7 @@
 			children = (
 				2CA082A524B34F1500B5D6A3 /* HomeViewController.swift */,
 				2C796E6624B543FA00D83304 /* MovieDetailViewController.swift */,
+				2C70175324BA03EF008D9EF5 /* SearchViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -188,6 +207,7 @@
 			children = (
 				2CA082A724B3525500B5D6A3 /* MovieCollectionViewCell.swift */,
 				2C69D1B024B9007A00186620 /* CastCollectionViewCell.swift */,
+				2C70175524BA055B008D9EF5 /* SearchTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -286,6 +306,7 @@
 				2CA0829224B3423700B5D6A3 /* Oswald-Bold.ttf in Resources */,
 				2C69D1BC24B9117200186620 /* FiraSansExtraCondensed-Light.ttf in Resources */,
 				2C796E9224B87D8D00D83304 /* Teko-Regular.ttf in Resources */,
+				2C70175B24BA2E5B008D9EF5 /* HomeScreen.storyboard in Resources */,
 				2CA0829124B3423700B5D6A3 /* Oswald-SemiBold.ttf in Resources */,
 				2CA0829424B3423700B5D6A3 /* Oswald-Medium.ttf in Resources */,
 				2C796E9324B87D8D00D83304 /* Teko-Light.ttf in Resources */,
@@ -356,11 +377,14 @@
 				2CA082A824B3525500B5D6A3 /* MovieCollectionViewCell.swift in Sources */,
 				2CA0826E24B33B6300B5D6A3 /* AppDelegate.swift in Sources */,
 				2C796E6724B543FA00D83304 /* MovieDetailViewController.swift in Sources */,
+				2C70175424BA03EF008D9EF5 /* SearchViewController.swift in Sources */,
+				2C70175624BA055B008D9EF5 /* SearchTableViewCell.swift in Sources */,
 				2CA0827024B33B6300B5D6A3 /* SceneDelegate.swift in Sources */,
 				2C69D1AD24B8FC8800186620 /* Cast.swift in Sources */,
 				2CA082A624B34F1500B5D6A3 /* HomeViewController.swift in Sources */,
 				2C69D1AF24B8FE5700186620 /* Credits.swift in Sources */,
 				2CA082AA24B36AC300B5D6A3 /* Movie.swift in Sources */,
+				2C70175924BA0715008D9EF5 /* GenreConvert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
