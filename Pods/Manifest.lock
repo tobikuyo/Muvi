@@ -1,18 +1,22 @@
 PODS:
+  - DZNEmptyDataSet (1.8.1)
   - Kingfisher (5.14.0):
     - Kingfisher/Core (= 5.14.0)
   - Kingfisher/Core (5.14.0)
 
 DEPENDENCIES:
+  - DZNEmptyDataSet
   - Kingfisher (~> 5.0)
 
 SPEC REPOS:
   trunk:
+    - DZNEmptyDataSet
     - Kingfisher
 
 SPEC CHECKSUMS:
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   Kingfisher: 7b64389a43139c903ec434788344c288217c792d
 
-PODFILE CHECKSUM: e973a5aca8740d1cc8a32204031c683dbb3709b6
+PODFILE CHECKSUM: 6aacd6b57ede208769b0f74335fa64fd9a6cea6e
 
 COCOAPODS: 1.9.2

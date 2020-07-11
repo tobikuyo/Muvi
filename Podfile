@@ -7,5 +7,6 @@ target 'PressPlay' do
 
   # Pods for PressPlay
     pod 'Kingfisher', '~> 5.0'
+    pod 'DZNEmptyDataSet'
 
 end
