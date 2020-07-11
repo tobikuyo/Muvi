@@ -18,6 +18,7 @@ struct Movie: Codable {
     let rating: Double?
     let releaseDate: String?
     let genres: [Genre]?
+    let genreIDs: [Int]?
     let runtime: Int?
 
     enum CodingKeys: String, CodingKey {
@@ -26,5 +27,6 @@ struct Movie: Codable {
         case backdrop = "backdrop_path"
         case rating = "vote_average"
         case releaseDate = "release_date"
+        case genreIDs = "genre_ids"
     }
 }
