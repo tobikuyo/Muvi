@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DZNEmptyDataSet
 
 class SearchViewController: UIViewController {
 
@@ -18,9 +19,20 @@ class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBarSetup()
+        emptyTableViewSetup()
+    }
+
+    private func searchBarSetup() {
         searchBar.tintColor = .white
         searchBar.barStyle = .black
         searchBar.autocapitalizationType = .words
+    }
+
+    private func emptyTableViewSetup() {
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
+        tableView.tableFooterView = UIView()
     }
 }
 
@@ -51,5 +63,18 @@ extension SearchViewController: UISearchBarDelegate {
                 self.tableView.reloadData()
             }
         }
+    }
+}
+
+extension SearchViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        let str = "SEARCH FOR A MOVIE"
+        let attrs = [NSAttributedString.Key.font: UIFont(name: "PathwayGothicOne-Regular", size: 20)!,
+                     NSAttributedString.Key.foregroundColor: UIColor.white]
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+
+    func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
+        return UIImage(named: "emptySearch")
     }
 }
