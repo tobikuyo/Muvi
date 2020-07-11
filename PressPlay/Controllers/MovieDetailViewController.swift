@@ -31,6 +31,7 @@ class MovieDetailViewController: UIViewController {
 
     private func updateViews() {
         guard let movie = movie else { return }
+
         APIController.shared.getDetails(for: movie) { movie in
             if let movie = movie {
                 let runtimeLabel = "\(String(describing: movie.runtime!)) MIN"
@@ -55,12 +56,13 @@ class MovieDetailViewController: UIViewController {
 
         let attributes = [NSAttributedString.Key.paragraphStyle: style]
         overviewTextView.attributedText = NSAttributedString(string: movie.overview!, attributes: attributes)
-        overviewTextView.font = UIFont(name: "FiraSansExtraCondensed-Regular", size: 19)
+        overviewTextView.font = UIFont(name: "FiraSansExtraCondensed-Regular", size: 18)
         overviewTextView.textAlignment = .center
     }
 
     private func getCast() {
         guard let movie = movie else { return }
+
         APIController.shared.getCast(for: movie) { data in
             if let data = data {
                 self.cast = data.cast

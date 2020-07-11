@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		2C10499324B3AFD600F32489 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10499224B3AFD600F32489 /* String+Extension.swift */; };
-		2C10499524B3B4BD00F32489 /* FjallaOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C10499424B3B4BD00F32489 /* FjallaOne-Regular.ttf */; };
 		2C10499724B490E800F32489 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10499624B490E800F32489 /* Genre.swift */; };
 		2C69D1AD24B8FC8800186620 /* Cast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C69D1AC24B8FC8800186620 /* Cast.swift */; };
 		2C69D1AF24B8FE5700186620 /* Credits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C69D1AE24B8FE5700186620 /* Credits.swift */; };
 		2C69D1B124B9007A00186620 /* CastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C69D1B024B9007A00186620 /* CastCollectionViewCell.swift */; };
+		2C69D1B624B90DC000186620 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C69D1B524B90DC000186620 /* Search.storyboard */; };
+		2C69D1BA24B9117200186620 /* FiraSansExtraCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C69D1B724B9117100186620 /* FiraSansExtraCondensed-Regular.ttf */; };
+		2C69D1BB24B9117200186620 /* FiraSansExtraCondensed-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C69D1B824B9117100186620 /* FiraSansExtraCondensed-Medium.ttf */; };
+		2C69D1BC24B9117200186620 /* FiraSansExtraCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C69D1B924B9117200186620 /* FiraSansExtraCondensed-Light.ttf */; };
 		2C796E6724B543FA00D83304 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C796E6624B543FA00D83304 /* MovieDetailViewController.swift */; };
 		2C796E9224B87D8D00D83304 /* Teko-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C796E9024B87D8D00D83304 /* Teko-Regular.ttf */; };
 		2C796E9324B87D8D00D83304 /* Teko-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C796E9124B87D8D00D83304 /* Teko-Light.ttf */; };
@@ -27,10 +30,6 @@
 		2CA0829424B3423700B5D6A3 /* Oswald-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CA0828E24B3423600B5D6A3 /* Oswald-Medium.ttf */; };
 		2CA0829624B3423700B5D6A3 /* Oswald-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CA0829024B3423700B5D6A3 /* Oswald-Regular.ttf */; };
 		2CA0829824B3424400B5D6A3 /* PathwayGothicOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CA0829724B3424400B5D6A3 /* PathwayGothicOne-Regular.ttf */; };
-		2CA0829A24B3426000B5D6A3 /* Caudex-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CA0829924B3426000B5D6A3 /* Caudex-Regular.ttf */; };
-		2CA0829C24B3426800B5D6A3 /* Caudex-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CA0829B24B3426800B5D6A3 /* Caudex-Bold.ttf */; };
-		2CA0829E24B3456200B5D6A3 /* Cuprum-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CA0829D24B3456200B5D6A3 /* Cuprum-Bold.ttf */; };
-		2CA082A024B3456B00B5D6A3 /* Cuprum-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CA0829F24B3456B00B5D6A3 /* Cuprum-Regular.ttf */; };
 		2CA082A624B34F1500B5D6A3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA082A524B34F1500B5D6A3 /* HomeViewController.swift */; };
 		2CA082A824B3525500B5D6A3 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA082A724B3525500B5D6A3 /* MovieCollectionViewCell.swift */; };
 		2CA082AA24B36AC300B5D6A3 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA082A924B36AC300B5D6A3 /* Movie.swift */; };
@@ -41,11 +40,14 @@
 
 /* Begin PBXFileReference section */
 		2C10499224B3AFD600F32489 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
-		2C10499424B3B4BD00F32489 /* FjallaOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FjallaOne-Regular.ttf"; sourceTree = "<group>"; };
 		2C10499624B490E800F32489 /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		2C69D1AC24B8FC8800186620 /* Cast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cast.swift; sourceTree = "<group>"; };
 		2C69D1AE24B8FE5700186620 /* Credits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credits.swift; sourceTree = "<group>"; };
 		2C69D1B024B9007A00186620 /* CastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastCollectionViewCell.swift; sourceTree = "<group>"; };
+		2C69D1B524B90DC000186620 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		2C69D1B724B9117100186620 /* FiraSansExtraCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraSansExtraCondensed-Regular.ttf"; sourceTree = "<group>"; };
+		2C69D1B824B9117100186620 /* FiraSansExtraCondensed-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraSansExtraCondensed-Medium.ttf"; sourceTree = "<group>"; };
+		2C69D1B924B9117200186620 /* FiraSansExtraCondensed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraSansExtraCondensed-Light.ttf"; sourceTree = "<group>"; };
 		2C796E6624B543FA00D83304 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		2C796E9024B87D8D00D83304 /* Teko-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Teko-Regular.ttf"; sourceTree = "<group>"; };
 		2C796E9124B87D8D00D83304 /* Teko-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Teko-Light.ttf"; sourceTree = "<group>"; };
@@ -62,10 +64,6 @@
 		2CA0828E24B3423600B5D6A3 /* Oswald-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Medium.ttf"; sourceTree = "<group>"; };
 		2CA0829024B3423700B5D6A3 /* Oswald-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Regular.ttf"; sourceTree = "<group>"; };
 		2CA0829724B3424400B5D6A3 /* PathwayGothicOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PathwayGothicOne-Regular.ttf"; sourceTree = "<group>"; };
-		2CA0829924B3426000B5D6A3 /* Caudex-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Caudex-Regular.ttf"; sourceTree = "<group>"; };
-		2CA0829B24B3426800B5D6A3 /* Caudex-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Caudex-Bold.ttf"; sourceTree = "<group>"; };
-		2CA0829D24B3456200B5D6A3 /* Cuprum-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cuprum-Bold.ttf"; sourceTree = "<group>"; };
-		2CA0829F24B3456B00B5D6A3 /* Cuprum-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cuprum-Regular.ttf"; sourceTree = "<group>"; };
 		2CA082A524B34F1500B5D6A3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2CA082A724B3525500B5D6A3 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		2CA082A924B36AC300B5D6A3 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
@@ -143,8 +141,9 @@
 		2CA0828224B33CA900B5D6A3 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				2CA0827324B33B6300B5D6A3 /* Main.storyboard */,
 				2CA0827824B33B6500B5D6A3 /* LaunchScreen.storyboard */,
+				2CA0827324B33B6300B5D6A3 /* Main.storyboard */,
+				2C69D1B524B90DC000186620 /* Search.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -160,11 +159,9 @@
 		2CA0828424B33CE800B5D6A3 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				2CA0829924B3426000B5D6A3 /* Caudex-Regular.ttf */,
-				2CA0829B24B3426800B5D6A3 /* Caudex-Bold.ttf */,
-				2CA0829F24B3456B00B5D6A3 /* Cuprum-Regular.ttf */,
-				2CA0829D24B3456200B5D6A3 /* Cuprum-Bold.ttf */,
-				2C10499424B3B4BD00F32489 /* FjallaOne-Regular.ttf */,
+				2C69D1B924B9117200186620 /* FiraSansExtraCondensed-Light.ttf */,
+				2C69D1B824B9117100186620 /* FiraSansExtraCondensed-Medium.ttf */,
+				2C69D1B724B9117100186620 /* FiraSansExtraCondensed-Regular.ttf */,
 				2CA0828D24B3423600B5D6A3 /* Oswald-Light.ttf */,
 				2CA0829024B3423700B5D6A3 /* Oswald-Regular.ttf */,
 				2CA0828E24B3423600B5D6A3 /* Oswald-Medium.ttf */,
@@ -285,21 +282,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CA0827A24B33B6500B5D6A3 /* LaunchScreen.storyboard in Resources */,
-				2CA082A024B3456B00B5D6A3 /* Cuprum-Regular.ttf in Resources */,
 				2CA0829624B3423700B5D6A3 /* Oswald-Regular.ttf in Resources */,
 				2CA0829224B3423700B5D6A3 /* Oswald-Bold.ttf in Resources */,
-				2C10499524B3B4BD00F32489 /* FjallaOne-Regular.ttf in Resources */,
-				2CA0829C24B3426800B5D6A3 /* Caudex-Bold.ttf in Resources */,
-				2CA0829A24B3426000B5D6A3 /* Caudex-Regular.ttf in Resources */,
+				2C69D1BC24B9117200186620 /* FiraSansExtraCondensed-Light.ttf in Resources */,
 				2C796E9224B87D8D00D83304 /* Teko-Regular.ttf in Resources */,
-				2CA0829E24B3456200B5D6A3 /* Cuprum-Bold.ttf in Resources */,
 				2CA0829124B3423700B5D6A3 /* Oswald-SemiBold.ttf in Resources */,
 				2CA0829424B3423700B5D6A3 /* Oswald-Medium.ttf in Resources */,
 				2C796E9324B87D8D00D83304 /* Teko-Light.ttf in Resources */,
 				2CA0829324B3423700B5D6A3 /* Oswald-Light.ttf in Resources */,
 				2CA0829824B3424400B5D6A3 /* PathwayGothicOne-Regular.ttf in Resources */,
 				2CA0827724B33B6500B5D6A3 /* Assets.xcassets in Resources */,
+				2C69D1BA24B9117200186620 /* FiraSansExtraCondensed-Regular.ttf in Resources */,
+				2C69D1B624B90DC000186620 /* Search.storyboard in Resources */,
 				2CA0827524B33B6300B5D6A3 /* Main.storyboard in Resources */,
+				2C69D1BB24B9117200186620 /* FiraSansExtraCondensed-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
