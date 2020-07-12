@@ -49,6 +49,7 @@ class HomeViewController: UIViewController {
         fetchTrendingMovies()
         fetchAllSections()
         setupViews()
+        emptyCollectionViewSetup()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -69,6 +70,11 @@ class HomeViewController: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(trendingImageTapped))
         trendingMovieImage.addGestureRecognizer(tap)
         trendingMovieImage.isUserInteractionEnabled = true
+    }
+
+    private func emptyCollectionViewSetup() {
+        trendingCollectionView.emptyDataSetSource = self
+        trendingCollectionView.emptyDataSetDelegate = self
     }
 
     private func fetchTrendingMovies() {
