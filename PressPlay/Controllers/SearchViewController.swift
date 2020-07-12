@@ -14,26 +14,46 @@ class SearchViewController: UIViewController {
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
 
+    // MARK: - Properties
+
     private var movies: [Movie] = []
     private var totalPages = 0
     private var page = 1
+
+    // MARK: - View Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBarSetup()
         emptyTableViewSetup()
+        navigationController?.overrideUserInterfaceStyle = .dark
     }
+
+    // MARK: - Methods
 
     private func searchBarSetup() {
         searchBar.tintColor = .white
         searchBar.barStyle = .black
         searchBar.autocapitalizationType = .words
+        searchBar.searchTextField.font = UIFont(name: "FiraSansExtraCondensed-Regular", size: 20)
     }
 
     private func emptyTableViewSetup() {
         tableView.emptyDataSetSource = self
         tableView.emptyDataSetDelegate = self
         tableView.tableFooterView = UIView()
+    }
+
+    // MARK: - Navigation
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "MovieDetailSegue" {
+            if let destinationVC = segue.destination as? MovieDetailViewController,
+                let indexPath = tableView.indexPathsForSelectedRows?.first {
+                let movie = movies[indexPath.row]
+                destinationVC.movie = movie
+            }
+        }
     }
 }
 
@@ -88,9 +108,9 @@ extension SearchViewController: UISearchBarDelegate {
 
 extension SearchViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
-        let str = "SEARCH FOR A MOVIE"
-        let attrs = [NSAttributedString.Key.font: UIFont(name: "PathwayGothicOne-Regular", size: 20)!,
-                     NSAttributedString.Key.foregroundColor: UIColor.white]
+        let str = "NO SEARCH RESULTS"
+        let attrs = [NSAttributedString.Key.font: UIFont(name: "PathwayGothicOne-Regular", size: 24)!,
+                     NSAttributedString.Key.foregroundColor: UIColor.lightGray]
         return NSAttributedString(string: str, attributes: attrs)
     }
 
