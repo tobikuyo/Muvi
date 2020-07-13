@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,9 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        UITabBar.appearance().tintColor = .red
         let fontAttributes = [NSAttributedString.Key.font : UIFont(name: "FiraSansExtraCondensed-Regular", size: 13)!]
+        UITabBar.appearance().tintColor = .red
         UITabBarItem.appearance().setTitleTextAttributes(fontAttributes, for: .normal)
+
+        FirebaseApp.configure()
         return true
     }
 

@@ -100,7 +100,7 @@
                                             <outlet property="movieImageView" destination="IMk-5h-pA3" id="J6d-JZ-irH"/>
                                             <outlet property="ratingLabel" destination="zUB-rN-Qgn" id="sAI-S7-9jc"/>
                                             <outlet property="titleLabel" destination="CQN-Uj-huq" id="lSI-iY-duK"/>
-                                            <segue destination="Bue-f5-iip" kind="show" id="aWm-Hn-Tiy"/>
+                                            <segue destination="Bue-f5-iip" kind="show" identifier="MovieDetailSegue" id="aWm-Hn-Tiy"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -136,7 +136,7 @@
         <!--Movie Detail View Controller-->
         <scene sceneID="PZ4-Kw-mPd">
             <objects>
-                <viewController id="Bue-f5-iip" customClass="MovieDetailViewController" customModule="PressPlay" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="Bue-f5-iip" customClass="MovieDetailViewController" customModule="PressPlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S0U-Mk-uNN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -152,7 +152,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RBm-6V-Dab">
-                                <rect key="frame" x="20" y="663.66666666666663" width="394" height="129.33333333333337"/>
+                                <rect key="frame" x="20" y="663.66666666666663" width="394" height="178.33333333333337"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VF6-Uc-TfS">
                                     <size key="itemSize" width="119" height="160"/>
@@ -162,7 +162,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CastCell" id="bZK-YF-bZM" customClass="CastCollectionViewCell" customModule="PressPlay" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="-15.333333333333334" width="119" height="160"/>
+                                        <rect key="frame" x="0.0" y="9.3333333333333339" width="119" height="160"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3F6-nX-alp">
                                             <rect key="frame" x="0.0" y="0.0" width="119" height="160"/>

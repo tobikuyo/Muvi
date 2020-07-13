@@ -19,8 +19,12 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet var overviewTextView: UITextView!
     @IBOutlet var castCollectionView: UICollectionView!
 
+    // MARK: - Properties
+
     var movie: Movie?
     var cast: [Cast] = []
+
+    // MARK: - View Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +32,8 @@ class MovieDetailViewController: UIViewController {
         textViewSetup()
         getCast()
     }
+
+    // MARK: - Methods
 
     private func updateViews() {
         guard let movie = movie else { return }
@@ -71,11 +77,14 @@ class MovieDetailViewController: UIViewController {
         }
     }
 
+    // MARK: - IBActions
+
     @IBAction func backButtonTapped(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
 
     @IBAction func saveButtonTapped(_ sender: Any) {
+        
     }
 }
 

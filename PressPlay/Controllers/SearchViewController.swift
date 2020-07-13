@@ -109,7 +109,7 @@ extension SearchViewController: UISearchBarDelegate {
 extension SearchViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
         let str = "NO SEARCH RESULTS"
-        let attrs = [NSAttributedString.Key.font: UIFont(name: "PathwayGothicOne-Regular", size: 24)!,
+        let attrs = [NSAttributedString.Key.font: UIFont(name: "PathwayGothicOne-Regular", size: 22)!,
                      NSAttributedString.Key.foregroundColor: UIColor.lightGray]
         return NSAttributedString(string: str, attributes: attrs)
     }

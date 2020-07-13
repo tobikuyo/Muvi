@@ -8,5 +8,8 @@ target 'PressPlay' do
   # Pods for PressPlay
     pod 'Kingfisher', '~> 5.0'
     pod 'DZNEmptyDataSet'
+    pod 'Firebase/Core'
+    pod 'Firebase/Firestore'
+    pod 'Firebase/Auth'
 
 end

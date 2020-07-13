@@ -21,6 +21,7 @@
 		2C70175924BA0715008D9EF5 /* GenreConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C70175824BA0715008D9EF5 /* GenreConvert.swift */; };
 		2C70175F24BA4DEF008D9EF5 /* HomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C70175E24BA4DEF008D9EF5 /* HomeScreen.storyboard */; };
 		2C70176324BA5651008D9EF5 /* Cuprum-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C70176224BA5650008D9EF5 /* Cuprum-Bold.ttf */; };
+		2C70176B24BBC6E2008D9EF5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C70176A24BBC6E2008D9EF5 /* GoogleService-Info.plist */; };
 		2C796E6724B543FA00D83304 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C796E6624B543FA00D83304 /* MovieDetailViewController.swift */; };
 		2C796E9224B87D8D00D83304 /* Teko-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C796E9024B87D8D00D83304 /* Teko-Regular.ttf */; };
 		2C796E9324B87D8D00D83304 /* Teko-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C796E9124B87D8D00D83304 /* Teko-Light.ttf */; };
@@ -58,6 +59,7 @@
 		2C70175824BA0715008D9EF5 /* GenreConvert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreConvert.swift; sourceTree = "<group>"; };
 		2C70175E24BA4DEF008D9EF5 /* HomeScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HomeScreen.storyboard; sourceTree = "<group>"; };
 		2C70176224BA5650008D9EF5 /* Cuprum-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cuprum-Bold.ttf"; sourceTree = "<group>"; };
+		2C70176A24BBC6E2008D9EF5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2C796E6624B543FA00D83304 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		2C796E9024B87D8D00D83304 /* Teko-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Teko-Regular.ttf"; sourceTree = "<group>"; };
 		2C796E9124B87D8D00D83304 /* Teko-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Teko-Light.ttf"; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				2CA0826F24B33B6300B5D6A3 /* SceneDelegate.swift */,
 				2CA0827624B33B6500B5D6A3 /* Assets.xcassets */,
 				2CA0827B24B33B6500B5D6A3 /* Info.plist */,
+				2C70176A24BBC6E2008D9EF5 /* GoogleService-Info.plist */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -255,7 +258,7 @@
 				2CA0826624B33B6300B5D6A3 /* Sources */,
 				2CA0826724B33B6300B5D6A3 /* Frameworks */,
 				2CA0826824B33B6300B5D6A3 /* Resources */,
-				C4E1836256668AF311A41769 /* [CP] Embed Pods Frameworks */,
+				71E1A94D73E0438A9CB4BAF6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -315,6 +318,7 @@
 				2CA0829424B3423700B5D6A3 /* Oswald-Medium.ttf in Resources */,
 				2C796E9324B87D8D00D83304 /* Teko-Light.ttf in Resources */,
 				2CA0829324B3423700B5D6A3 /* Oswald-Light.ttf in Resources */,
+				2C70176B24BBC6E2008D9EF5 /* GoogleService-Info.plist in Resources */,
 				2CA0829824B3424400B5D6A3 /* PathwayGothicOne-Regular.ttf in Resources */,
 				2CA0827724B33B6500B5D6A3 /* Assets.xcassets in Resources */,
 				2C69D1BA24B9117200186620 /* FiraSansExtraCondensed-Regular.ttf in Resources */,
@@ -327,6 +331,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		71E1A94D73E0438A9CB4BAF6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PressPlay/Pods-PressPlay-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PressPlay/Pods-PressPlay-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PressPlay/Pods-PressPlay-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A02D6ACC64360C9446A65C41 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -347,23 +368,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C4E1836256668AF311A41769 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PressPlay/Pods-PressPlay-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PressPlay/Pods-PressPlay-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PressPlay/Pods-PressPlay-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
