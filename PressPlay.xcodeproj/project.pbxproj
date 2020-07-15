@@ -41,6 +41,11 @@
 		2CA082AA24B36AC300B5D6A3 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA082A924B36AC300B5D6A3 /* Movie.swift */; };
 		2CA082AC24B36C9900B5D6A3 /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA082AB24B36C9900B5D6A3 /* Results.swift */; };
 		2CA082AE24B36D2900B5D6A3 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA082AD24B36D2900B5D6A3 /* APIController.swift */; };
+		2CFC0A3524BF2F05002A78FC /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CFC0A3424BF2F05002A78FC /* Onboarding.storyboard */; };
+		2CFC0A3724BF3111002A78FC /* Play-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CFC0A3624BF3110002A78FC /* Play-Regular.ttf */; };
+		2CFC0A3924BF3122002A78FC /* Play-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CFC0A3824BF3122002A78FC /* Play-Bold.ttf */; };
+		2CFC0A3B24BF3509002A78FC /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFC0A3A24BF3509002A78FC /* OnboardingViewController.swift */; };
+		2CFC0A3D24BF36E4002A78FC /* OnboardingTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFC0A3C24BF36E3002A78FC /* OnboardingTextfield.swift */; };
 		B3005616DCBA4F00E1C1C990 /* Pods_PressPlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D4DD534F8E2F2DA1A077CC /* Pods_PressPlay.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +86,11 @@
 		2CA082A924B36AC300B5D6A3 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		2CA082AB24B36C9900B5D6A3 /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
 		2CA082AD24B36D2900B5D6A3 /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
+		2CFC0A3424BF2F05002A78FC /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		2CFC0A3624BF3110002A78FC /* Play-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Play-Regular.ttf"; sourceTree = "<group>"; };
+		2CFC0A3824BF3122002A78FC /* Play-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Play-Bold.ttf"; sourceTree = "<group>"; };
+		2CFC0A3A24BF3509002A78FC /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		2CFC0A3C24BF36E3002A78FC /* OnboardingTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTextfield.swift; sourceTree = "<group>"; };
 		71D4DD534F8E2F2DA1A077CC /* Pods_PressPlay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PressPlay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7604A92B1E18BA45D91330CE /* Pods-PressPlay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PressPlay.debug.xcconfig"; path = "Target Support Files/Pods-PressPlay/Pods-PressPlay.debug.xcconfig"; sourceTree = "<group>"; };
 		D840A74ADC7470C4A6E4992A /* Pods-PressPlay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PressPlay.release.xcconfig"; path = "Target Support Files/Pods-PressPlay/Pods-PressPlay.release.xcconfig"; sourceTree = "<group>"; };
@@ -110,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				2C70175824BA0715008D9EF5 /* GenreConvert.swift */,
+				2CFC0A3C24BF36E3002A78FC /* OnboardingTextfield.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -164,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				2CA0827824B33B6500B5D6A3 /* LaunchScreen.storyboard */,
+				2CFC0A3424BF2F05002A78FC /* Onboarding.storyboard */,
 				2CA0827324B33B6300B5D6A3 /* Main.storyboard */,
 				2C70175E24BA4DEF008D9EF5 /* HomeScreen.storyboard */,
 				2C69D1B524B90DC000186620 /* Search.storyboard */,
@@ -192,6 +204,8 @@
 				2CA0828B24B3423600B5D6A3 /* Oswald-SemiBold.ttf */,
 				2CA0828C24B3423600B5D6A3 /* Oswald-Bold.ttf */,
 				2CA0829724B3424400B5D6A3 /* PathwayGothicOne-Regular.ttf */,
+				2CFC0A3624BF3110002A78FC /* Play-Regular.ttf */,
+				2CFC0A3824BF3122002A78FC /* Play-Bold.ttf */,
 				2C796E9124B87D8D00D83304 /* Teko-Light.ttf */,
 				2C796E9024B87D8D00D83304 /* Teko-Regular.ttf */,
 			);
@@ -201,6 +215,7 @@
 		2CA0828524B33CEE00B5D6A3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2CFC0A3A24BF3509002A78FC /* OnboardingViewController.swift */,
 				2CA082A524B34F1500B5D6A3 /* HomeViewController.swift */,
 				2C796E6624B543FA00D83304 /* MovieDetailViewController.swift */,
 				2C70175324BA03EF008D9EF5 /* SearchViewController.swift */,
@@ -308,13 +323,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CA0827A24B33B6500B5D6A3 /* LaunchScreen.storyboard in Resources */,
+				2CFC0A3524BF2F05002A78FC /* Onboarding.storyboard in Resources */,
 				2CA0829624B3423700B5D6A3 /* Oswald-Regular.ttf in Resources */,
 				2CA0829224B3423700B5D6A3 /* Oswald-Bold.ttf in Resources */,
 				2C69D1BC24B9117200186620 /* FiraSansExtraCondensed-Light.ttf in Resources */,
 				2C70176324BA5651008D9EF5 /* Cuprum-Bold.ttf in Resources */,
 				2C796E9224B87D8D00D83304 /* Teko-Regular.ttf in Resources */,
+				2CFC0A3924BF3122002A78FC /* Play-Bold.ttf in Resources */,
 				2C70175F24BA4DEF008D9EF5 /* HomeScreen.storyboard in Resources */,
 				2CA0829124B3423700B5D6A3 /* Oswald-SemiBold.ttf in Resources */,
+				2CFC0A3724BF3111002A78FC /* Play-Regular.ttf in Resources */,
 				2CA0829424B3423700B5D6A3 /* Oswald-Medium.ttf in Resources */,
 				2C796E9324B87D8D00D83304 /* Teko-Light.ttf in Resources */,
 				2CA0829324B3423700B5D6A3 /* Oswald-Light.ttf in Resources */,
@@ -380,12 +398,14 @@
 				2C10499724B490E800F32489 /* Genre.swift in Sources */,
 				2C69D1B124B9007A00186620 /* CastCollectionViewCell.swift in Sources */,
 				2C10499324B3AFD600F32489 /* String+Extension.swift in Sources */,
+				2CFC0A3B24BF3509002A78FC /* OnboardingViewController.swift in Sources */,
 				2CA082AE24B36D2900B5D6A3 /* APIController.swift in Sources */,
 				2CA082AC24B36C9900B5D6A3 /* Results.swift in Sources */,
 				2CA082A824B3525500B5D6A3 /* MovieCollectionViewCell.swift in Sources */,
 				2CA0826E24B33B6300B5D6A3 /* AppDelegate.swift in Sources */,
 				2C796E6724B543FA00D83304 /* MovieDetailViewController.swift in Sources */,
 				2C70175424BA03EF008D9EF5 /* SearchViewController.swift in Sources */,
+				2CFC0A3D24BF36E4002A78FC /* OnboardingTextfield.swift in Sources */,
 				2C70175624BA055B008D9EF5 /* SearchTableViewCell.swift in Sources */,
 				2CA0827024B33B6300B5D6A3 /* SceneDelegate.swift in Sources */,
 				2C69D1AD24B8FC8800186620 /* Cast.swift in Sources */,
