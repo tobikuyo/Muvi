@@ -41,6 +41,7 @@
 		2CA082AA24B36AC300B5D6A3 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA082A924B36AC300B5D6A3 /* Movie.swift */; };
 		2CA082AC24B36C9900B5D6A3 /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA082AB24B36C9900B5D6A3 /* Results.swift */; };
 		2CA082AE24B36D2900B5D6A3 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA082AD24B36D2900B5D6A3 /* APIController.swift */; };
+		2CB40F0024BF918D00C63937 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CB40EFF24BF918D00C63937 /* Profile.storyboard */; };
 		2CFC0A3524BF2F05002A78FC /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CFC0A3424BF2F05002A78FC /* Onboarding.storyboard */; };
 		2CFC0A3724BF3111002A78FC /* Play-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CFC0A3624BF3110002A78FC /* Play-Regular.ttf */; };
 		2CFC0A3924BF3122002A78FC /* Play-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CFC0A3824BF3122002A78FC /* Play-Bold.ttf */; };
@@ -87,6 +88,7 @@
 		2CA082A924B36AC300B5D6A3 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		2CA082AB24B36C9900B5D6A3 /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
 		2CA082AD24B36D2900B5D6A3 /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
+		2CB40EFF24BF918D00C63937 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		2CFC0A3424BF2F05002A78FC /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		2CFC0A3624BF3110002A78FC /* Play-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Play-Regular.ttf"; sourceTree = "<group>"; };
 		2CFC0A3824BF3122002A78FC /* Play-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Play-Bold.ttf"; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				2CA0827324B33B6300B5D6A3 /* Main.storyboard */,
 				2C70175E24BA4DEF008D9EF5 /* HomeScreen.storyboard */,
 				2C69D1B524B90DC000186620 /* Search.storyboard */,
+				2CB40EFF24BF918D00C63937 /* Profile.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				2CA0829124B3423700B5D6A3 /* Oswald-SemiBold.ttf in Resources */,
 				2CFC0A3724BF3111002A78FC /* Play-Regular.ttf in Resources */,
 				2CA0829424B3423700B5D6A3 /* Oswald-Medium.ttf in Resources */,
+				2CB40F0024BF918D00C63937 /* Profile.storyboard in Resources */,
 				2C796E9324B87D8D00D83304 /* Teko-Light.ttf in Resources */,
 				2CA0829324B3423700B5D6A3 /* Oswald-Light.ttf in Resources */,
 				2C70176B24BBC6E2008D9EF5 /* GoogleService-Info.plist in Resources */,

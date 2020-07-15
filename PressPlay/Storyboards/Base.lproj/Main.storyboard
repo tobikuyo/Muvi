@@ -12,6 +12,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="gIi-Be-M9x" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="I2g-82-QI5">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -21,6 +22,7 @@
                     <connections>
                         <segue destination="Opp-7e-iKP" kind="relationship" relationship="viewControllers" id="V4t-3H-hkK"/>
                         <segue destination="tgF-g3-bgR" kind="relationship" relationship="viewControllers" id="YU3-Ho-xVg"/>
+                        <segue destination="3KD-kl-xSF" kind="relationship" relationship="viewControllers" id="INK-sn-wfD"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dUr-2u-E11" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -41,15 +43,26 @@
         <scene sceneID="PsE-Kg-Pe4">
             <objects>
                 <viewControllerPlaceholder storyboardName="Search" id="tgF-g3-bgR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" image="search" selectedImage="search" id="jIn-sE-V1P"/>
+                    <tabBarItem key="tabBarItem" title="SEARCH" image="search" selectedImage="search" id="jIn-sE-V1P"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XNL-iu-QMw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="315" y="777"/>
         </scene>
+        <!--Profile-->
+        <scene sceneID="GE6-jx-pp1">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" id="3KD-kl-xSF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="PROFILE" image="user" selectedImage="user" id="Xpe-mv-owB"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ruT-xh-6X9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="565" y="777"/>
+        </scene>
     </scenes>
     <resources>
         <image name="popcorn" width="21.333333969116211" height="21.333333969116211"/>
         <image name="search" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="user" width="21.333333969116211" height="21.333333969116211"/>
     </resources>
 </document>
