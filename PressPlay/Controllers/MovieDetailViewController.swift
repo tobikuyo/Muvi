@@ -29,7 +29,6 @@ class MovieDetailViewController: UIViewController {
     var isSaved: Bool?
 
     private var cast: [Cast] = []
-    private var handle:  AuthStateDidChangeListenerHandle?
     private let database = Firestore.firestore()
     private var documentID: String?
     private var imageRef: StorageReference?
@@ -91,20 +90,6 @@ class MovieDetailViewController: UIViewController {
                 self.castCollectionView.reloadData()
             }
         }
-    }
-
-    private func checkLoginState() {
-        handle = Auth.auth().addStateDidChangeListener({ auth, user in
-            if user == nil {
-                let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
-                let onboardingVC = storyboard.instantiateViewController(withIdentifier: "OnboardingViewController")
-                onboardingVC.modalPresentationStyle = .fullScreen
-                self.present(onboardingVC, animated: true, completion: nil)
-            } else {
-                self.saveToDatabase()
-                self.isSaved = true
-            }
-        })
     }
 
     private func saveToDatabase() {
@@ -199,7 +184,7 @@ class MovieDetailViewController: UIViewController {
         sender.isSelected = !sender.isSelected
 
         if saveButton.isSelected {
-            checkLoginState()
+            saveToDatabase()
         } else {
             removeFromDatabase()
             removeImageFromStorage()

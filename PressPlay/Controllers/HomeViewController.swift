@@ -9,6 +9,7 @@
 import UIKit
 import Kingfisher
 import DZNEmptyDataSet
+import FirebaseAuth
 
 class HomeViewController: UIViewController {
 
@@ -36,6 +37,8 @@ class HomeViewController: UIViewController {
     private let topRated = "top_rated"
     private let showTrendingSegue = "TrendingMovieSegue"
 
+    private var handle: AuthStateDidChangeListenerHandle?
+
     private var trendingMovie: Movie? {
         didSet {
             trendingMovieImage.kf.setImage(with: trendingMovie?.backdrop?.url)
@@ -46,8 +49,7 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchTrendingMovies()
-        fetchAllSections()
+        checkLoginState()
         setupViews()
         emptyCollectionViewSetup()
     }
@@ -75,6 +77,20 @@ class HomeViewController: UIViewController {
     private func emptyCollectionViewSetup() {
         trendingCollectionView.emptyDataSetSource = self
         trendingCollectionView.emptyDataSetDelegate = self
+    }
+
+    private func checkLoginState() {
+        handle = Auth.auth().addStateDidChangeListener({ auth, user in
+            if user == nil {
+                let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+                let onboardingVC = storyboard.instantiateViewController(withIdentifier: "OnboardingViewController")
+                onboardingVC.modalPresentationStyle = .fullScreen
+                self.present(onboardingVC, animated: true, completion: nil)
+            } else {
+                self.fetchTrendingMovies()
+                self.fetchAllSections()
+            }
+        })
     }
 
     private func fetchTrendingMovies() {
