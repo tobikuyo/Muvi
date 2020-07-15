@@ -8,6 +8,8 @@
 
 import UIKit
 import Kingfisher
+import Firebase
+import FirebaseAuth
 import FirebaseStorage
 
 class MovieDetailViewController: UIViewController {
@@ -24,7 +26,13 @@ class MovieDetailViewController: UIViewController {
     // MARK: - Properties
 
     var movie: Movie?
-    var cast: [Cast] = []
+    var isSaved: Bool?
+
+    private var cast: [Cast] = []
+    private var handle:  AuthStateDidChangeListenerHandle?
+    private let database = Firestore.firestore()
+    private var documentID: String?
+    private var imageRef: StorageReference?
 
     // MARK: - View Lifecycle
 
@@ -33,6 +41,12 @@ class MovieDetailViewController: UIViewController {
         updateViews()
         textViewSetup()
         getCast()
+
+        if UserDefaults.standard.bool(forKey: "isSaved") == true {
+            saveButton.isSelected = true
+        } else {
+            saveButton.isSelected = false
+        }
     }
 
     // MARK: - Methods
@@ -79,6 +93,20 @@ class MovieDetailViewController: UIViewController {
         }
     }
 
+    private func checkLoginState() {
+        handle = Auth.auth().addStateDidChangeListener({ auth, user in
+            if user == nil {
+                let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+                let onboardingVC = storyboard.instantiateViewController(withIdentifier: "OnboardingViewController")
+                onboardingVC.modalPresentationStyle = .fullScreen
+                self.present(onboardingVC, animated: true, completion: nil)
+            } else {
+                self.saveToDatabase()
+                self.isSaved = true
+            }
+        })
+    }
+
     private func saveToDatabase() {
         guard
             let title = titleLabel.text,
@@ -88,10 +116,77 @@ class MovieDetailViewController: UIViewController {
             let overview = overviewTextView.text,
             let image = backdropImageView.image,
             let data = image.jpegData(compressionQuality: 1) else { return }
+
+        let imageName = UUID().uuidString
+        let imageRef = Storage.storage()
+            .reference()
+            .child(Fire.images)
+            .child(imageName)
+
+        self.imageRef = imageRef
+
+        imageRef.putData(data, metadata: nil) { metadata, error in
+            if let error = error {
+                NSLog("Error saving image data: \(error.localizedDescription)")
+                return
+            }
+
+            imageRef.downloadURL { url, error in
+                if let error = error {
+                    NSLog("Error getting url for saved imgae: \(error.localizedDescription)")
+                    return
+                }
+
+                guard let url = url else { return }
+
+                let favouritesRef = self.database.collection(Fire.favourites).document()
+                let documentID = favouritesRef.documentID
+                self.documentID = documentID
+
+                favouritesRef.setData([
+                    Fire.title: title,
+                    Fire.runtime: runtime,
+                    Fire.releaseYear: releaseYear,
+                    Fire.genre: genre,
+                    Fire.overview: overview,
+                    Fire.imageURL: url.absoluteString,
+                    Fire.userID: Auth.auth().currentUser?.uid ?? "",
+                    Fire.documentID: documentID
+
+                ]) { error in
+                    if let error = error {
+                        NSLog("Error adding movie: \(error.localizedDescription)")
+                    } else {
+                        UserDefaults.standard.set(true, forKey: "isSaved")
+                    }
+                }
+            }
+        }
     }
 
     private func removeFromDatabase() {
+        guard let documentID = documentID else { return }
 
+        self.database
+            .collection(Fire.favourites)
+            .document(documentID)
+            .delete { error in
+                if let error = error {
+                    NSLog("Error removing document: \(error.localizedDescription)")
+                } else {
+                    UserDefaults.standard.set(false, forKey: "isSaved")
+                }
+        }
+    }
+
+    private func removeImageFromStorage() {
+        guard let imageRef = imageRef else { return }
+
+        imageRef.delete { error in
+            if let error = error {
+                NSLog("Error removing images: \(error.localizedDescription)")
+            }
+        }
     }
 
     // MARK: - IBActions
@@ -100,9 +195,15 @@ class MovieDetailViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
 
-    @IBAction func saveButtonTapped(_ sender: Any) {
-        saveButton.isSelected.toggle()
+    @IBAction func saveButtonTapped(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
 
+        if saveButton.isSelected {
+            checkLoginState()
+        } else {
+            removeFromDatabase()
+            removeImageFromStorage()
+        }
     }
 }
 
