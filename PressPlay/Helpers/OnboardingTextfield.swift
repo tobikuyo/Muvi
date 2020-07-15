@@ -21,7 +21,7 @@ class OnboardingTextField {
     }
 
     static func styleFilledButton(_ button: UIButton) {
-        button.backgroundColor = UIColor.init(red: 108/255, green: 65/255, blue: 72/255, alpha: 1)
+        button.backgroundColor = UIColor.init(red: 145/255, green: 20/255, blue: 20/255, alpha: 1)
         button.layer.cornerRadius = 5.0
         button.tintColor = UIColor.white
     }

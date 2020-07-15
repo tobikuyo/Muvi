@@ -46,6 +46,7 @@
 		2CFC0A3924BF3122002A78FC /* Play-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CFC0A3824BF3122002A78FC /* Play-Bold.ttf */; };
 		2CFC0A3B24BF3509002A78FC /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFC0A3A24BF3509002A78FC /* OnboardingViewController.swift */; };
 		2CFC0A3D24BF36E4002A78FC /* OnboardingTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFC0A3C24BF36E3002A78FC /* OnboardingTextfield.swift */; };
+		2CFC0A4124BF4132002A78FC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFC0A4024BF4132002A78FC /* Constants.swift */; };
 		B3005616DCBA4F00E1C1C990 /* Pods_PressPlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D4DD534F8E2F2DA1A077CC /* Pods_PressPlay.framework */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +92,7 @@
 		2CFC0A3824BF3122002A78FC /* Play-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Play-Bold.ttf"; sourceTree = "<group>"; };
 		2CFC0A3A24BF3509002A78FC /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		2CFC0A3C24BF36E3002A78FC /* OnboardingTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTextfield.swift; sourceTree = "<group>"; };
+		2CFC0A4024BF4132002A78FC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		71D4DD534F8E2F2DA1A077CC /* Pods_PressPlay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PressPlay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7604A92B1E18BA45D91330CE /* Pods-PressPlay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PressPlay.debug.xcconfig"; path = "Target Support Files/Pods-PressPlay/Pods-PressPlay.debug.xcconfig"; sourceTree = "<group>"; };
 		D840A74ADC7470C4A6E4992A /* Pods-PressPlay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PressPlay.release.xcconfig"; path = "Target Support Files/Pods-PressPlay/Pods-PressPlay.release.xcconfig"; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			children = (
 				2C70175824BA0715008D9EF5 /* GenreConvert.swift */,
 				2CFC0A3C24BF36E3002A78FC /* OnboardingTextfield.swift */,
+				2CFC0A4024BF4132002A78FC /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C10499724B490E800F32489 /* Genre.swift in Sources */,
+				2CFC0A4124BF4132002A78FC /* Constants.swift in Sources */,
 				2C69D1B124B9007A00186620 /* CastCollectionViewCell.swift in Sources */,
 				2C10499324B3AFD600F32489 /* String+Extension.swift in Sources */,
 				2CFC0A3B24BF3509002A78FC /* OnboardingViewController.swift in Sources */,
