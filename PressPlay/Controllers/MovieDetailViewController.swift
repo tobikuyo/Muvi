@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import FirebaseStorage
 
 class MovieDetailViewController: UIViewController {
 
@@ -18,6 +19,7 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet var genreLabel: UILabel!
     @IBOutlet var overviewTextView: UITextView!
     @IBOutlet var castCollectionView: UICollectionView!
+    @IBOutlet var saveButton: UIButton!
 
     // MARK: - Properties
 
@@ -77,6 +79,21 @@ class MovieDetailViewController: UIViewController {
         }
     }
 
+    private func saveToDatabase() {
+        guard
+            let title = titleLabel.text,
+            let runtime = runtimeLabel.text,
+            let releaseYear = releaseYearLabel.text,
+            let genre = genreLabel.text,
+            let overview = overviewTextView.text,
+            let image = backdropImageView.image,
+            let data = image.jpegData(compressionQuality: 1) else { return }
+    }
+
+    private func removeFromDatabase() {
+
+    }
+
     // MARK: - IBActions
 
     @IBAction func backButtonTapped(_ sender: Any) {
@@ -84,7 +101,8 @@ class MovieDetailViewController: UIViewController {
     }
 
     @IBAction func saveButtonTapped(_ sender: Any) {
-        
+        saveButton.isSelected.toggle()
+
     }
 }
 

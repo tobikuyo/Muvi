@@ -20,9 +20,11 @@ struct Movie: Codable {
     let genres: [Genre]?
     let genreIDs: [Int]?
     let runtime: Int?
+    let documentID: String?
+    let userID: String?
 
     enum CodingKeys: String, CodingKey {
-        case id, title, overview, voteCount, genres, runtime
+        case id, title, overview, voteCount, genres, runtime, documentID, userID
         case poster = "poster_path"
         case backdrop = "backdrop_path"
         case rating = "vote_average"

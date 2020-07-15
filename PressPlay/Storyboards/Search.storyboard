@@ -59,13 +59,13 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hmY-nn-8Yn">
                                                     <rect key="frame" x="106" y="41.333333333333343" width="239" height="47.666666666666657"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQN-Uj-huq">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQN-Uj-huq">
                                                             <rect key="frame" x="0.0" y="0.0" width="239" height="21.666666666666668"/>
                                                             <fontDescription key="fontDescription" name="FiraSansExtraCondensed-Medium" family="Fira Sans Extra Condensed" pointSize="18"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hfe-ua-2rf">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hfe-ua-2rf">
                                                             <rect key="frame" x="0.0" y="29.666666666666664" width="239" height="18"/>
                                                             <fontDescription key="fontDescription" name="FiraSansExtraCondensed-Regular" family="Fira Sans Extra Condensed" pointSize="15"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -327,6 +327,7 @@
                         <outlet property="overviewTextView" destination="y1W-0P-rES" id="BR4-Lh-5Xk"/>
                         <outlet property="releaseYearLabel" destination="qDB-Q4-dWX" id="uPx-Il-avx"/>
                         <outlet property="runtimeLabel" destination="vcf-wD-C2d" id="TmQ-zX-hhf"/>
+                        <outlet property="saveButton" destination="J6X-ut-t8f" id="u67-Qh-VGA"/>
                         <outlet property="titleLabel" destination="HR8-pJ-Hne" id="bpR-H9-TcN"/>
                     </connections>
                 </viewController>

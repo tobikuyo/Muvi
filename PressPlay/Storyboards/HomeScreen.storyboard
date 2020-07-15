@@ -527,6 +527,7 @@
                         <outlet property="overviewTextView" destination="y1W-0P-rES" id="BR4-Lh-5Xk"/>
                         <outlet property="releaseYearLabel" destination="qDB-Q4-dWX" id="uPx-Il-avx"/>
                         <outlet property="runtimeLabel" destination="vcf-wD-C2d" id="TmQ-zX-hhf"/>
+                        <outlet property="saveButton" destination="J6X-ut-t8f" id="8cx-V2-dj7"/>
                         <outlet property="titleLabel" destination="HR8-pJ-Hne" id="bpR-H9-TcN"/>
                     </connections>
                 </viewController>
