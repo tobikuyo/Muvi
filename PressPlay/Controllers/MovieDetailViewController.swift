@@ -40,15 +40,22 @@ class MovieDetailViewController: UIViewController {
         updateViews()
         textViewSetup()
         getCast()
+        checkSavedStatus()
+    }
 
-        if UserDefaults.standard.bool(forKey: "isSaved") == true {
+    // MARK: - Methods
+
+    private func checkSavedStatus() {
+        guard
+            let movie = movie,
+            let isSaved = movie.isSaved else { return }
+
+        if isSaved {
             saveButton.isSelected = true
         } else {
             saveButton.isSelected = false
         }
     }
-
-    // MARK: - Methods
 
     private func updateViews() {
         guard let movie = movie else { return }
@@ -134,15 +141,17 @@ class MovieDetailViewController: UIViewController {
                     Fire.releaseYear: releaseYear,
                     Fire.genre: genre,
                     Fire.overview: overview,
-                    Fire.imageURL: url.absoluteString,
+                    Fire.backdropURL: url.absoluteString,
                     Fire.userID: Auth.auth().currentUser?.uid ?? "",
                     Fire.documentID: documentID
-
                 ]) { error in
                     if let error = error {
                         NSLog("Error adding movie: \(error.localizedDescription)")
                     } else {
-                        UserDefaults.standard.set(true, forKey: "isSaved")
+                        self.movie?.isSaved = true
+                        self.movie?.documentID = documentID
+                        guard let id = self.movie?.id else { return }
+                        UserDefaults.standard.set(documentID, forKey: id.description)
                     }
                 }
             }
@@ -150,7 +159,9 @@ class MovieDetailViewController: UIViewController {
     }
 
     private func removeFromDatabase() {
-        guard let documentID = documentID else { return }
+        guard
+            let id = self.movie?.id,
+            let documentID = UserDefaults.standard.string(forKey: id.description) else { return }
 
         self.database
             .collection(Fire.favourites)
@@ -159,7 +170,7 @@ class MovieDetailViewController: UIViewController {
                 if let error = error {
                     NSLog("Error removing document: \(error.localizedDescription)")
                 } else {
-                    UserDefaults.standard.set(false, forKey: "isSaved")
+                    self.movie?.isSaved = false
                 }
         }
     }
