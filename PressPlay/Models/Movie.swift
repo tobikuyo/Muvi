@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Movie: Codable {
+class Movie: Codable {
     let id: Int?
     let title: String?
     let overview: String?
@@ -20,6 +20,10 @@ struct Movie: Codable {
     let genres: [Genre]?
     let genreIDs: [Int]?
     let runtime: Int?
+    var backdropURL: String? = nil
+    var genre: String?
+    var isSaved: Bool?
+    var documentID: String? = nil
 
     enum CodingKeys: String, CodingKey {
         case id, title, overview, voteCount, genres, runtime
@@ -28,5 +32,22 @@ struct Movie: Codable {
         case rating = "vote_average"
         case releaseDate = "release_date"
         case genreIDs = "genre_ids"
+    }
+
+    init(id: Int?, title: String?, overview: String?, poster: String?, backdrop: String?, voteCount: Int?, rating: Double?, releaseDate: String?, genres: [Genre]?, genreIDs: [Int]?, genre: String?, runtime: Int?, backdropURL: String, isSaved: Bool? = false) {
+        self.id = id
+        self.title = title
+        self.overview = overview
+        self.poster = poster
+        self.backdrop = backdrop
+        self.voteCount = voteCount
+        self.rating = rating
+        self.releaseDate = releaseDate
+        self.genres = genres
+        self.genreIDs = genreIDs
+        self.genre = genre
+        self.runtime = runtime
+        self.backdropURL = backdropURL
+        self.isSaved = isSaved
     }
 }
