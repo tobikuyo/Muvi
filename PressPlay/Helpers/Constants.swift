@@ -17,6 +17,8 @@ struct Fire {
     static let genre        = "genre"
     static let overview     = "overview"
     static let imageURL     = "imageURL"
+    static let backdropURL  = "backdropURL"
+    static let isSaved      = "isSaved"
     static let userID       = "userID"
     static let documentID   = "documentID"
 }
