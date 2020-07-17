@@ -21,8 +21,6 @@ class DatabaseController {
 
     var movies: [Movie] = []
     private let database = Firestore.firestore()
-    private var documentID: String?
-    private var imageRef: StorageReference?
     private var moviesListener: ListenerRegistration!
 
     // MARK: - Authentication
@@ -82,7 +80,6 @@ class DatabaseController {
 
                 let favouritesRef = self.database.collection(Fire.favourites).document()
                 let documentID = favouritesRef.documentID
-                self.documentID = documentID
 
                 favouritesRef.setData([
                     Fire.id: id,
@@ -141,6 +138,7 @@ class DatabaseController {
             let backdropURL = data[Fire.backdropURL] as? String ?? ""
             let id = data[Fire.id] as? Int ?? 0
             let imageRef = data[Fire.imageRef] as? String ?? ""
+            let documentID = data[Fire.documentID] as? String ?? ""
 
             let movie = Movie(id: id,
                               title: title,
@@ -158,6 +156,7 @@ class DatabaseController {
                               backdropURL: backdropURL,
                               imageRef: imageRef)
 
+            movie.documentID = documentID
             movies.append(movie)
         }
 
@@ -165,9 +164,7 @@ class DatabaseController {
     }
 
     func remove(movie: Movie) {
-        guard
-            let id = movie.id,
-            let documentID = UserDefaults.standard.string(forKey: id.description) else { return }
+        guard let documentID = movie.documentID else { return }
 
         database.collection(Fire.favourites)
             .document(documentID)

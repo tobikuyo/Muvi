@@ -81,6 +81,7 @@ extension ProfileViewController: UITableViewDelegate {
         if editingStyle == .delete {
             let movie = movies[indexPath.row]
             DatabaseController.shared.remove(movie: movie)
+            DatabaseController.shared.removeImage(for: movie)
         }
     }
 }
