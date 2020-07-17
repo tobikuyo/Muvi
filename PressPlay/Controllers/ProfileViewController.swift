@@ -8,17 +8,12 @@
 
 import UIKit
 import Firebase
-import FirebaseAuth
 
 class ProfileViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
 
-    // MARK: - Properties
-
     private var movies: [Movie] = []
-    private var moviesListener: ListenerRegistration!
-    private let moviesCollectionRef = Firestore.firestore().collection(Fire.favourites)
 
     // MARK: - View Lifecycle
 
@@ -34,54 +29,58 @@ class ProfileViewController: UIViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        movies.removeAll()
-
-        if moviesListener != nil {
-            moviesListener.remove()
-        }
+        DatabaseController.shared.removeListener()
     }
 
     // MARK: - Methods
 
     private func fetchMovies() {
-        guard let userID = Auth.auth().currentUser?.uid else { return }
-
-        moviesListener = moviesCollectionRef
-            .whereField(Fire.userID, isEqualTo: userID)
-            .addSnapshotListener({ snapshot, error in
-                if let error = error {
-                    NSLog("Error fetching movies from Firebase: \(error)")
-                } else {
-                    self.movies = DatabaseController.shared.parse(snapshot)
-                    self.tableView.reloadData()
-                }
-            })
+        DatabaseController.shared.fetch { movies in
+            guard let movies = movies else { return }
+            self.movies = movies
+            self.tableView.reloadData()
+        }
     }
 
     @IBAction func signoutTapped(_ sender: UIButton) {
-        navigationController?.popToRootViewController(animated: true)
+        Alert.forSignout(self)
+    }
 
-        do {
-            try Auth.auth().signOut()
-        } catch {
-            NSLog("Error signing out: \(error)")
+    //  MARK: - Navigation
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Segue.movieDetail {
+            if let destinationVC = segue.destination as? SavedDetailViewController,
+                let indexPath = tableView.indexPathForSelectedRow {
+                let movie = movies[indexPath.row]
+                destinationVC.movie = movie
+            }
         }
     }
 }
 
 
-extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
+extension ProfileViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SavedMovieCell", for: indexPath) as? SavedMovieTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Cell.savedMovie, for: indexPath) as? SavedMovieTableViewCell else {
             return UITableViewCell()
         }
 
         let movie = movies[indexPath.item]
         cell.movie = movie
         return cell
+    }
+}
+
+extension ProfileViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let movie = movies[indexPath.row]
+            DatabaseController.shared.remove(movie: movie)
+        }
     }
 }
