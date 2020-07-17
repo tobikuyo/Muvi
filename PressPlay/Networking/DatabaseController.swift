@@ -98,8 +98,6 @@ class DatabaseController {
                     } else {
                         movie.isSaved = true
                         movie.documentID = documentID
-                        guard let id = movie.id else { return }
-                        UserDefaults.standard.set(documentID, forKey: id.description)
                     }
                 }
             }
