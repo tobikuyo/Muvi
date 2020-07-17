@@ -8,9 +8,6 @@
 
 import UIKit
 import Kingfisher
-import Firebase
-import FirebaseAuth
-import FirebaseStorage
 
 class MovieDetailViewController: UIViewController {
 
@@ -26,12 +23,7 @@ class MovieDetailViewController: UIViewController {
     // MARK: - Properties
 
     var movie: Movie?
-    var isSaved: Bool?
-
-    private var cast: [Cast] = []
-    private let database = Firestore.firestore()
-    private var documentID: String?
-    private var imageRef: StorageReference?
+    var cast: [Cast] = []
 
     // MARK: - View Lifecycle
 
@@ -64,7 +56,7 @@ class MovieDetailViewController: UIViewController {
             if let movie = movie {
                 let runtimeLabel = "\(String(describing: movie.runtime!)) MIN"
                 let releaseYearLabel = String((movie.releaseDate?.split(separator: "-")[0])!)
-                let genreLabel = movie.genres?.first?.name?.uppercased()
+                let genreLabel = movie.genres?.first?.name?.uppercased() ?? "No Genre"
 
                 self.backdropImageView.kf.setImage(with: movie.backdrop?.url)
                 self.titleLabel.text = movie.title?.uppercased()
@@ -84,7 +76,7 @@ class MovieDetailViewController: UIViewController {
 
         let attributes = [NSAttributedString.Key.paragraphStyle: style]
         overviewTextView.attributedText = NSAttributedString(string: movie.overview!, attributes: attributes)
-        overviewTextView.font = UIFont(name: "FiraSansExtraCondensed-Regular", size: 18)
+        overviewTextView.font = UIFont(name: Font.fira, size: 18)
         overviewTextView.textAlignment = .center
     }
 
@@ -101,89 +93,32 @@ class MovieDetailViewController: UIViewController {
 
     private func saveToDatabase() {
         guard
+            let movie = movie,
             let title = titleLabel.text,
             let runtime = runtimeLabel.text,
             let releaseYear = releaseYearLabel.text,
             let genre = genreLabel.text,
             let overview = overviewTextView.text,
+            let id = movie.id,
             let image = backdropImageView.image,
             let data = image.jpegData(compressionQuality: 1) else { return }
 
-        let imageName = UUID().uuidString
-        let imageRef = Storage.storage()
-            .reference()
-            .child(Fire.images)
-            .child(imageName)
-
-        self.imageRef = imageRef
-
-        imageRef.putData(data, metadata: nil) { metadata, error in
-            if let error = error {
-                NSLog("Error saving image data: \(error.localizedDescription)")
-                return
-            }
-
-            imageRef.downloadURL { url, error in
-                if let error = error {
-                    NSLog("Error getting url for saved imgae: \(error.localizedDescription)")
-                    return
-                }
-
-                guard let url = url else { return }
-
-                let favouritesRef = self.database.collection(Fire.favourites).document()
-                let documentID = favouritesRef.documentID
-                self.documentID = documentID
-
-                favouritesRef.setData([
-                    Fire.title: title,
-                    Fire.runtime: runtime,
-                    Fire.releaseYear: releaseYear,
-                    Fire.genre: genre,
-                    Fire.overview: overview,
-                    Fire.backdropURL: url.absoluteString,
-                    Fire.userID: Auth.auth().currentUser?.uid ?? "",
-                    Fire.documentID: documentID
-                ]) { error in
-                    if let error = error {
-                        NSLog("Error adding movie: \(error.localizedDescription)")
-                    } else {
-                        self.movie?.isSaved = true
-                        self.movie?.documentID = documentID
-                        guard let id = self.movie?.id else { return }
-                        UserDefaults.standard.set(documentID, forKey: id.description)
-                    }
-                }
-            }
-        }
+        DatabaseController.shared.save(movie: movie,
+                                       called: title,
+                                       runtime: runtime,
+                                       releaseYear: releaseYear,
+                                       genre: genre,
+                                       overview: overview,
+                                       data: data,
+                                       id: id)
     }
 
-    private func removeFromDatabase() {
-        guard
-            let id = self.movie?.id,
-            let documentID = UserDefaults.standard.string(forKey: id.description) else { return }
-
-        self.database
-            .collection(Fire.favourites)
-            .document(documentID)
-            .delete { error in
-                if let error = error {
-                    NSLog("Error removing document: \(error.localizedDescription)")
-                } else {
-                    self.movie?.isSaved = false
-                }
-        }
+    private func removeMovie() {
+        guard let movie = movie else { return }
+        DatabaseController.shared.remove(movie: movie)
+        DatabaseController.shared.removeImage(for: movie)
     }
 
-    private func removeImageFromStorage() {
-        guard let imageRef = imageRef else { return }
-
-        imageRef.delete { error in
-            if let error = error {
-                NSLog("Error removing images: \(error.localizedDescription)")
-            }
-        }
-    }
 
     // MARK: - IBActions
 
@@ -192,13 +127,12 @@ class MovieDetailViewController: UIViewController {
     }
 
     @IBAction func saveButtonTapped(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
+        saveButton.isSelected.toggle()
 
         if saveButton.isSelected {
             saveToDatabase()
         } else {
-            removeFromDatabase()
-            removeImageFromStorage()
+            removeMovie()
         }
     }
 }
@@ -209,7 +143,7 @@ extension MovieDetailViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CastCell", for: indexPath) as? CastCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cell.cast, for: indexPath) as? CastCollectionViewCell else {
             return UICollectionViewCell()
         }
 

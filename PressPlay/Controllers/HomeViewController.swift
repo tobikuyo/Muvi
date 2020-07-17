@@ -35,7 +35,6 @@ class HomeViewController: UIViewController {
     private let popular = "popular"
     private let nowPlaying = "now_playing"
     private let topRated = "top_rated"
-    private let showTrendingSegue = "TrendingMovieSegue"
 
     private var handle: AuthStateDidChangeListenerHandle?
 
@@ -62,7 +61,7 @@ class HomeViewController: UIViewController {
     // MARK: - Methods
 
     @objc func trendingImageTapped() {
-        performSegue(withIdentifier: showTrendingSegue, sender: self)
+        performSegue(withIdentifier: Segue.trending, sender: self)
     }
 
     private func setupViews() {
@@ -197,7 +196,7 @@ class HomeViewController: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == showTrendingSegue {
+        if segue.identifier == Segue.trending {
             guard let destinationVC = segue.destination as? MovieDetailViewController else { return }
             destinationVC.movie = trendingMovie
         } else {
@@ -227,13 +226,13 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch collectionView {
         case trendingCollectionView:
-            return cell(for: trendingCollectionView, with: trendingMovies, andIdentifier: "TrendingCell", at: indexPath)
+            return cell(for: trendingCollectionView, with: trendingMovies, andIdentifier: Cell.trending, at: indexPath)
         case popularCollectionView:
-            return cell(for: popularCollectionView, with: popularMovies, andIdentifier: "PopularCell", at: indexPath)
+            return cell(for: popularCollectionView, with: popularMovies, andIdentifier: Cell.popular, at: indexPath)
         case nowPlayingCollectionView:
-            return cell(for: nowPlayingCollectionView, with: nowPlayingMovies, andIdentifier: "NowPlayingCell", at: indexPath)
+            return cell(for: nowPlayingCollectionView, with: nowPlayingMovies, andIdentifier: Cell.nowPlaying, at: indexPath)
         default:
-            return cell(for: topRatedCollectionView, with: topRatedMovies, andIdentifier: "TopRatedCell", at: indexPath)
+            return cell(for: topRatedCollectionView, with: topRatedMovies, andIdentifier: Cell.topRated, at: indexPath)
         }
     }
 
@@ -265,7 +264,7 @@ extension HomeViewController: UICollectionViewDelegate {
 extension HomeViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
         let str = "NO INTERNET CONNECTION"
-        let attrs = [NSAttributedString.Key.font: UIFont(name: "PathwayGothicOne-Regular", size: 20)!,
+        let attrs = [NSAttributedString.Key.font: UIFont(name: Font.pathway, size: 20)!,
                      NSAttributedString.Key.foregroundColor: UIColor.white]
         return NSAttributedString(string: str, attributes: attrs)
     }

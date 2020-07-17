@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Firebase
-import FirebaseAuth
 
 enum LoginState {
     case notRegistered
@@ -59,32 +57,12 @@ class OnboardingViewController: UIViewController {
         passwordTextField.isSecureTextEntry = true
     }
 
-    private func presentAlert(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        present(alert, animated: true)
-    }
-
     private func signIn(with email: String, and password: String) {
-        Auth.auth().signIn(withEmail: email, password: password) { user, error in
-            if let error = error {
-                self.presentAlert(title: "Error", message: "Unable to sign in with those details")
-                NSLog("Error signing in: \(error.localizedDescription)")
-            } else {
-                self.dismiss(animated: true, completion: nil)
-            }
-        }
+        DatabaseController.shared.signIn(with: email, and: password, on: self)
     }
 
     private func signup(with email: String, and password: String) {
-        Auth.auth().createUser(withEmail: email, password: password) { user, error in
-            if let error = error {
-                self.presentAlert(title: "Error", message: "Unable to register with those details")
-                NSLog("Error registering: \(error.localizedDescription)")
-            } else {
-                self.dismiss(animated: true, completion: nil)
-            }
-        }
+        DatabaseController.shared.signup(with: email, and: password, on: self)
     }
 
     // MARK: - IBActions

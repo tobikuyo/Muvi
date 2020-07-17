@@ -35,7 +35,7 @@ class SearchViewController: UIViewController {
         searchBar.tintColor = .white
         searchBar.barStyle = .black
         searchBar.autocapitalizationType = .words
-        searchBar.searchTextField.font = UIFont(name: "FiraSansExtraCondensed-Regular", size: 20)
+        searchBar.searchTextField.font = UIFont(name: Font.fira, size: 20)
     }
 
     private func emptyTableViewSetup() {
@@ -47,7 +47,7 @@ class SearchViewController: UIViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "MovieDetailSegue" {
+        if segue.identifier == Segue.movieDetail {
             if let destinationVC = segue.destination as? MovieDetailViewController,
                 let indexPath = tableView.indexPathsForSelectedRows?.first {
                 let movie = movies[indexPath.row]
@@ -63,7 +63,7 @@ extension SearchViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SearchCell", for: indexPath) as? SearchTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Cell.search, for: indexPath) as? SearchTableViewCell else {
             return UITableViewCell()
         }
 
@@ -109,7 +109,7 @@ extension SearchViewController: UISearchBarDelegate {
 extension SearchViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
         let str = "NO SEARCH RESULTS"
-        let attrs = [NSAttributedString.Key.font: UIFont(name: "PathwayGothicOne-Regular", size: 22)!,
+        let attrs = [NSAttributedString.Key.font: UIFont(name: Font.pathway, size: 22)!,
                      NSAttributedString.Key.foregroundColor: UIColor.lightGray]
         return NSAttributedString(string: str, attributes: attrs)
     }
