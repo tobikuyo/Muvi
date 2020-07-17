@@ -21,4 +21,4 @@ A full stack app that uses the Movie Database API to parse through thousands of 
 ### Screenshots:
 
 <img src="homeScreen.png" width="200"> <img src="movieDetail.png" width="200">
-<img src="profile.png" width="200"> <img src="search.png" width="200">
+<img src="search.png" width="200"> <img src="profile.png" width="200">
