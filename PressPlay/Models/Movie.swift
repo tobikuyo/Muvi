@@ -20,10 +20,12 @@ class Movie: Codable {
     let genres: [Genre]?
     let genreIDs: [Int]?
     let runtime: Int?
+    var runtimeString: String?
     var backdropURL: String? = nil
     var genre: String?
     var isSaved: Bool?
     var documentID: String? = nil
+    var imageRef: String? = nil
 
     enum CodingKeys: String, CodingKey {
         case id, title, overview, voteCount, genres, runtime
@@ -34,7 +36,7 @@ class Movie: Codable {
         case genreIDs = "genre_ids"
     }
 
-    init(id: Int?, title: String?, overview: String?, poster: String?, backdrop: String?, voteCount: Int?, rating: Double?, releaseDate: String?, genres: [Genre]?, genreIDs: [Int]?, genre: String?, runtime: Int?, backdropURL: String, isSaved: Bool? = false) {
+    init(id: Int?, title: String?, overview: String?, poster: String?, backdrop: String?, voteCount: Int?, rating: Double?, releaseDate: String?, genres: [Genre]?, genreIDs: [Int]?, genre: String?, runtime: Int?, runtimeString: String?, backdropURL: String?, imageRef: String?, isSaved: Bool? = false) {
         self.id = id
         self.title = title
         self.overview = overview
@@ -47,7 +49,9 @@ class Movie: Codable {
         self.genreIDs = genreIDs
         self.genre = genre
         self.runtime = runtime
+        self.runtimeString = runtimeString
         self.backdropURL = backdropURL
+        self.imageRef = imageRef
         self.isSaved = isSaved
     }
 }
