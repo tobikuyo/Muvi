@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v4N-t3-mxZ">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -40,22 +40,22 @@
                                     <action selector="signoutTapped:" destination="uIC-Gi-DH7" eventType="touchUpInside" id="ZWj-0r-YWC"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOUR MOVIES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M0Y-he-Y8g">
-                                <rect key="frame" x="20" y="120" width="121.5" height="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MY MOVIES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M0Y-he-Y8g">
+                                <rect key="frame" x="156.5" y="120" width="101" height="35"/>
                                 <fontDescription key="fontDescription" name="PathwayGothicOne-Regular" family="Pathway Gothic One" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qxk-Wi-akk">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qxk-Wi-akk">
                                 <rect key="frame" x="0.0" y="185" width="414" height="711"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SavedMovieCell" id="l29-Jt-9IZ" customClass="SavedMovieTableViewCell" customModule="PressPlay" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SavedMovieCell" id="l29-Jt-9IZ" customClass="SavedMovieTableViewCell" customModule="PressPlay" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="l29-Jt-9IZ" id="1Qe-Q4-oT8">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ejQ-zF-fg0">
@@ -66,7 +66,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lVg-Pk-YGS">
-                                                    <rect key="frame" x="120" y="15.5" width="274" height="49"/>
+                                                    <rect key="frame" x="120" y="15.5" width="255" height="49"/>
                                                     <fontDescription key="fontDescription" name="FiraSansExtraCondensed-Medium" family="Fira Sans Extra Condensed" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -85,6 +85,7 @@
                                         <connections>
                                             <outlet property="movieImage" destination="ejQ-zF-fg0" id="qG4-b2-e8I"/>
                                             <outlet property="titleLabel" destination="lVg-Pk-YGS" id="NnZ-aY-nTk"/>
+                                            <segue destination="Bue-f5-iip" kind="show" identifier="MovieDetailSegue" id="9ta-uq-0aN"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -99,11 +100,11 @@
                             <constraint firstItem="Qxk-Wi-akk" firstAttribute="top" secondItem="M0Y-he-Y8g" secondAttribute="bottom" constant="30" id="7Do-Ut-FQP"/>
                             <constraint firstItem="Lwm-Db-KaP" firstAttribute="top" secondItem="5yr-it-ibi" secondAttribute="top" constant="20" id="Adz-de-Css"/>
                             <constraint firstItem="Qxk-Wi-akk" firstAttribute="leading" secondItem="5yr-it-ibi" secondAttribute="leading" id="Kfg-EN-VSh"/>
-                            <constraint firstItem="M0Y-he-Y8g" firstAttribute="leading" secondItem="5yr-it-ibi" secondAttribute="leading" constant="20" id="RSd-Qg-78M"/>
                             <constraint firstAttribute="bottom" secondItem="Qxk-Wi-akk" secondAttribute="bottom" id="Yf7-Bs-56N"/>
                             <constraint firstItem="Qxk-Wi-akk" firstAttribute="trailing" secondItem="5yr-it-ibi" secondAttribute="trailing" id="dZe-bL-Uqg"/>
                             <constraint firstItem="5yr-it-ibi" firstAttribute="trailing" secondItem="Lwm-Db-KaP" secondAttribute="trailing" constant="20" id="nRa-zo-slO"/>
                             <constraint firstItem="M0Y-he-Y8g" firstAttribute="top" secondItem="5yr-it-ibi" secondAttribute="top" constant="76" id="rfQ-KQ-owc"/>
+                            <constraint firstItem="M0Y-he-Y8g" firstAttribute="centerX" secondItem="bel-WB-UhL" secondAttribute="centerX" id="w6O-EI-9mu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5yr-it-ibi"/>
                     </view>
@@ -116,10 +117,10 @@
             </objects>
             <point key="canvasLocation" x="711.59420289855075" y="55.580357142857139"/>
         </scene>
-        <!--Movie Detail View Controller-->
+        <!--Saved Detail View Controller-->
         <scene sceneID="PZ4-Kw-mPd">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="Bue-f5-iip" customClass="MovieDetailViewController" customModule="PressPlay" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="Bue-f5-iip" customClass="SavedDetailViewController" customModule="PressPlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S0U-Mk-uNN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -149,15 +150,9 @@
                                     <constraint firstAttribute="width" constant="28" id="uGK-Gi-F6K"/>
                                 </constraints>
                                 <state key="normal" image="backArrow"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J6X-ut-t8f">
-                                <rect key="frame" x="356" y="59" width="28" height="28"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="28" id="B58-oi-y7b"/>
-                                    <constraint firstAttribute="height" constant="28" id="Ebi-8M-wYH"/>
-                                </constraints>
-                                <state key="normal" image="bookmark"/>
-                                <state key="selected" image="saved"/>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="Bue-f5-iip" eventType="touchUpInside" id="n0e-lZ-yOu"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HR8-pJ-Hne">
                                 <rect key="frame" x="20" y="330" width="374" height="44.5"/>
@@ -180,19 +175,19 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="248" verticalHuggingPriority="251" text="122 MIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vcf-wD-C2d">
-                                <rect key="frame" x="273.5" y="444.5" width="45" height="22"/>
+                                <rect key="frame" x="273.5" y="444.5" width="45.5" height="22"/>
                                 <fontDescription key="fontDescription" name="PathwayGothicOne-Regular" family="Pathway Gothic One" pointSize="19"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="248" verticalHuggingPriority="251" text="ADVENTURE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KLI-av-C1j">
-                                <rect key="frame" x="158.5" y="444.5" width="97" height="22"/>
+                                <rect key="frame" x="159" y="444.5" width="96.5" height="22"/>
                                 <fontDescription key="fontDescription" name="PathwayGothicOne-Regular" family="Pathway Gothic One" pointSize="19"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="248" verticalHuggingPriority="251" text="2020" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDB-Q4-dWX">
-                                <rect key="frame" x="95.5" y="444.5" width="45" height="22"/>
+                                <rect key="frame" x="95.5" y="444.5" width="45.5" height="22"/>
                                 <fontDescription key="fontDescription" name="PathwayGothicOne-Regular" family="Pathway Gothic One" pointSize="19"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -214,7 +209,6 @@
                             <constraint firstItem="OqF-aJ-H7f" firstAttribute="trailing" secondItem="HR8-pJ-Hne" secondAttribute="trailing" constant="20" id="MB2-qP-Emk"/>
                             <constraint firstItem="qDB-Q4-dWX" firstAttribute="centerX" secondItem="JnX-Hw-nTz" secondAttribute="centerX" id="MrV-k8-2N9"/>
                             <constraint firstItem="OqF-aJ-H7f" firstAttribute="trailing" secondItem="y1W-0P-rES" secondAttribute="trailing" constant="20" id="Mw1-PC-tsG"/>
-                            <constraint firstItem="J6X-ut-t8f" firstAttribute="centerY" secondItem="McK-Bw-CsP" secondAttribute="centerY" id="OX8-aR-BfB"/>
                             <constraint firstItem="HR8-pJ-Hne" firstAttribute="top" secondItem="gJ5-j3-oVM" secondAttribute="bottom" constant="20" id="OZh-wc-Gfi"/>
                             <constraint firstItem="qDB-Q4-dWX" firstAttribute="centerY" secondItem="KLI-av-C1j" secondAttribute="centerY" id="P15-4T-D7b"/>
                             <constraint firstItem="McK-Bw-CsP" firstAttribute="top" secondItem="OqF-aJ-H7f" secondAttribute="top" constant="15" id="Q5T-r6-rz3"/>
@@ -226,7 +220,6 @@
                             <constraint firstItem="vcf-wD-C2d" firstAttribute="leading" secondItem="KLI-av-C1j" secondAttribute="trailing" constant="18" id="YgI-yJ-Gr0"/>
                             <constraint firstItem="KLI-av-C1j" firstAttribute="centerX" secondItem="S0U-Mk-uNN" secondAttribute="centerX" id="ZXP-F1-nhe"/>
                             <constraint firstItem="vcf-wD-C2d" firstAttribute="centerY" secondItem="KLI-av-C1j" secondAttribute="centerY" id="a9h-Bv-1Ju"/>
-                            <constraint firstItem="OqF-aJ-H7f" firstAttribute="trailing" secondItem="J6X-ut-t8f" secondAttribute="trailing" constant="30" id="act-sU-F6i"/>
                             <constraint firstItem="4HI-bI-GHo" firstAttribute="centerX" secondItem="S0U-Mk-uNN" secondAttribute="centerX" id="dAG-Wr-xza"/>
                             <constraint firstItem="vcf-wD-C2d" firstAttribute="centerX" secondItem="SDq-df-lGO" secondAttribute="centerX" id="gDc-En-f4v"/>
                             <constraint firstItem="SDq-df-lGO" firstAttribute="leading" secondItem="4HI-bI-GHo" secondAttribute="trailing" constant="64" id="hom-aw-fwY"/>
@@ -239,6 +232,14 @@
                         <viewLayoutGuide key="safeArea" id="OqF-aJ-H7f"/>
                     </view>
                     <navigationItem key="navigationItem" id="7XY-6M-wTs"/>
+                    <connections>
+                        <outlet property="backdropImageView" destination="gJ5-j3-oVM" id="t6B-Di-V3S"/>
+                        <outlet property="genreLabel" destination="KLI-av-C1j" id="Fug-f9-nMY"/>
+                        <outlet property="overviewTextView" destination="y1W-0P-rES" id="aoS-ma-gDL"/>
+                        <outlet property="releaseYearLabel" destination="qDB-Q4-dWX" id="eyy-2B-Jw1"/>
+                        <outlet property="runtimeLabel" destination="vcf-wD-C2d" id="hMK-b8-ktJ"/>
+                        <outlet property="titleLabel" destination="HR8-pJ-Hne" id="tBf-NM-t8y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kcg-X8-7xE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -267,11 +268,9 @@
     </scenes>
     <resources>
         <image name="backArrow" width="170.5" height="170.5"/>
-        <image name="bookmark" width="170.5" height="170.5"/>
         <image name="calendar" width="170.5" height="170.5"/>
         <image name="popcorn" width="21" height="21"/>
         <image name="runtime" width="170.5" height="170.5"/>
-        <image name="saved" width="170.5" height="170.5"/>
         <image name="signout" width="170.5" height="170.5"/>
         <image name="user" width="21" height="21"/>
     </resources>
