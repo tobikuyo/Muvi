@@ -2,7 +2,7 @@
 
 A full stack app that uses the Movie Database API to parse through thousands of movies, uses Firebase Database to save movie details and Firebase Storage to store images. 
 
-### Technologies Used:
+### Technologies:
 
 * UIKit
 * MovieDB API
