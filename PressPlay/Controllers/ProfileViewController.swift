@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import DZNEmptyDataSet
 
 class ProfileViewController: UIViewController {
 
@@ -25,6 +26,7 @@ class ProfileViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchMovies()
+        emptyTableViewSetup()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -40,6 +42,12 @@ class ProfileViewController: UIViewController {
             self.movies = movies
             self.tableView.reloadData()
         }
+    }
+
+    private func emptyTableViewSetup() {
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
+        tableView.tableFooterView = UIView()
     }
 
     @IBAction func signoutTapped(_ sender: UIButton) {
@@ -83,5 +91,18 @@ extension ProfileViewController: UITableViewDelegate {
             DatabaseController.shared.remove(movie: movie)
             DatabaseController.shared.removeImage(for: movie)
         }
+    }
+}
+
+extension ProfileViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        let str = "NO SAVED MOVIES"
+        let attrs = [NSAttributedString.Key.font: UIFont(name: Font.pathway, size: 22)!,
+                     NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+
+    func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
+        return UIImage(named: "noMovies")
     }
 }
