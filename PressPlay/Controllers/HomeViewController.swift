@@ -11,7 +11,7 @@ import Kingfisher
 import DZNEmptyDataSet
 import Firebase
 
-class HomeViewController: UIViewController {
+class HomeViewController: TabViewController {
 
     @IBOutlet var trendingMovieImage: UIImageView!
     @IBOutlet var trendingCollectionView: UICollectionView!
@@ -93,7 +93,7 @@ class HomeViewController: UIViewController {
     }
 
     private func fetchTrendingMovies() {
-        APIController.shared.fetchTrendingMovies(on: trendingPage) { data in
+        apiController.fetchTrendingMovies(on: trendingPage) { data in
             guard let data = data else { return }
             self.trendingMovies = data.results
             self.trendingMovie = data.results[Int.random(in: 3...19)]
@@ -108,7 +108,7 @@ class HomeViewController: UIViewController {
     }
 
     private func fetchMovies(forSection section: String, onPage: Int = 1) {
-        APIController.shared.fetchMovies(forSection: section, on: page) { data in
+        apiController.fetchMovies(forSection: section, on: page) { data in
             guard let data = data else { return }
 
             switch section {
@@ -135,7 +135,7 @@ class HomeViewController: UIViewController {
             if trendingPage < 3  {
                 trendingPage += 1
                 OperationQueue.main.addOperation {
-                    APIController.shared.fetchTrendingMovies(on: self.trendingPage) { data in
+                    self.apiController.fetchTrendingMovies(on: self.trendingPage) { data in
                         guard let data = data else { return }
                         self.trendingMovies += data.results
                         self.trendingCollectionView.reloadData()
@@ -158,7 +158,7 @@ class HomeViewController: UIViewController {
         if page < totalPages {
             page += 1
             OperationQueue.main.addOperation {
-                APIController.shared.fetchMovies(forSection: section, on: self.page) { data in
+                self.apiController.fetchMovies(forSection: section, on: self.page) { data in
                     guard let data = data else { return }
 
                     switch section {
@@ -191,6 +191,8 @@ class HomeViewController: UIViewController {
                 let indexPath = collectionView.indexPathsForSelectedItems?.first {
                 let movie = movies[indexPath.item]
                 destinationVC.movie = movie
+                destinationVC.apiController = apiController
+                destinationVC.firebaseController = firebaseController
             }
         }
     }
@@ -199,6 +201,8 @@ class HomeViewController: UIViewController {
         if segue.identifier == Segue.trending {
             guard let destinationVC = segue.destination as? MovieDetailViewController else { return }
             destinationVC.movie = trendingMovie
+            destinationVC.apiController = apiController
+            destinationVC.firebaseController = firebaseController
         } else {
             let cell = sender as! UICollectionViewCell
             prepare(segue, for: trendingCollectionView, using: cell, and: 0, for: trendingMovies)

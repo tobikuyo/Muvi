@@ -13,7 +13,7 @@ enum LoginState {
     case notLoggedIn
 }
 
-class OnboardingViewController: UIViewController {
+class OnboardingViewController: TabViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -66,9 +66,9 @@ class OnboardingViewController: UIViewController {
             !email.isEmpty, !password.isEmpty else { return }
 
         if state == .notLoggedIn {
-            FirebaseController.shared.signIn(with: email, and: password, on: self)
+            firebaseController.signIn(with: email, and: password, on: self)
         } else {
-            FirebaseController.shared.signup(with: email, and: password, on: self)
+            firebaseController.signup(with: email, and: password, on: self)
         }
     }
 

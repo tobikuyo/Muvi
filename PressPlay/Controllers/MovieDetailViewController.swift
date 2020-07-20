@@ -22,8 +22,10 @@ class MovieDetailViewController: UIViewController {
 
     // MARK: - Properties
 
-    var movie: Movie?
     var cast: [Cast] = []
+    var movie: Movie?
+    var apiController: APIController?
+    var firebaseController: FirebaseController?
 
     // MARK: - View Lifecycle
 
@@ -52,7 +54,7 @@ class MovieDetailViewController: UIViewController {
     private func updateViews() {
         guard let movie = movie else { return }
 
-        APIController.shared.getDetails(for: movie) { movie in
+        apiController?.getDetails(for: movie) { movie in
             if let movie = movie {
                 let runtimeLabel = "\(String(describing: movie.runtime!)) MIN"
                 let releaseYearLabel = String((movie.releaseDate?.split(separator: "-")[0])!)
@@ -83,7 +85,7 @@ class MovieDetailViewController: UIViewController {
     private func getCast() {
         guard let movie = movie else { return }
 
-        APIController.shared.getCast(for: movie) { data in
+        apiController?.getCast(for: movie) { data in
             if let data = data {
                 self.cast = data.cast
                 self.castCollectionView.reloadData()
@@ -103,7 +105,7 @@ class MovieDetailViewController: UIViewController {
             let image = backdropImageView.image,
             let data = image.jpegData(compressionQuality: 1) else { return }
 
-        FirebaseController.shared.save(movie: movie,
+        firebaseController?.save(movie: movie,
                                        called: title,
                                        runtime: runtime,
                                        releaseYear: releaseYear,
@@ -115,8 +117,8 @@ class MovieDetailViewController: UIViewController {
 
     private func removeMovie() {
         guard let movie = movie else { return }
-        FirebaseController.shared.remove(movie)
-        FirebaseController.shared.removeImage(for: movie)
+        firebaseController?.remove(movie)
+        firebaseController?.removeImage(for: movie)
     }
 
 

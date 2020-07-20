@@ -28,13 +28,13 @@ struct Alert {
         basicAlert(on: vc, with: "Error", message: "Unable to register with those details")
     }
 
-    static func forSignout(_ vc: UIViewController) {
+    static func forSignout(_ vc: TabViewController) {
         let alert = UIAlertController(title: "Signing Out",
                                       message: "Are you sure you want to sign out?",
                                       preferredStyle: .alert)
 
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
-            FirebaseController.shared.signout()
+            vc.firebaseController.signout()
         }))
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))

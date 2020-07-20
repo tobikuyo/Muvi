@@ -11,11 +11,7 @@ import Firebase
 
 class FirebaseController {
 
-    private init() {}
-
     // MARK: - Properties
-
-    static let shared = FirebaseController()
 
     private(set) var movies: [Movie] = []
     private let database = Firestore.firestore()

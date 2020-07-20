@@ -9,7 +9,7 @@
 import UIKit
 import DZNEmptyDataSet
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: TabViewController {
 
     @IBOutlet var tableView: UITableView!
 
@@ -30,13 +30,13 @@ class ProfileViewController: UIViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        FirebaseController.shared.removeListener()
+        firebaseController.removeListener()
     }
 
     // MARK: - Methods
 
     private func fetchMovies() {
-        FirebaseController.shared.fetch { movies in
+        firebaseController.fetch { movies in
             guard let movies = movies else { return }
             self.movies = movies
             self.tableView.reloadData()
@@ -87,8 +87,8 @@ extension ProfileViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let movie = movies[indexPath.row]
-            FirebaseController.shared.remove(movie)
-            FirebaseController.shared.removeImage(for: movie)
+            firebaseController.remove(movie)
+            firebaseController.removeImage(for: movie)
         }
     }
 }

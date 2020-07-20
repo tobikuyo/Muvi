@@ -9,7 +9,7 @@
 import UIKit
 import DZNEmptyDataSet
 
-class SearchViewController: UIViewController {
+class SearchViewController: TabViewController {
 
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
@@ -80,7 +80,7 @@ extension SearchViewController: UITableViewDelegate {
                 page += 1
                 OperationQueue.main.addOperation {
                     guard let query = self.searchBar.text else { return }
-                    APIController.shared.searchForMovie(called: query, on: self.page) { data in
+                    self.apiController.searchForMovie(called: query, on: self.page) { data in
                         guard let data = data else { return }
                         self.movies += data.results
                         self.tableView.reloadData()
@@ -96,7 +96,7 @@ extension SearchViewController: UISearchBarDelegate {
         searchBar.resignFirstResponder()
         guard let query = searchBar.text else { return }
 
-        APIController.shared.searchForMovie(called: query, on: page) { data in
+        apiController.searchForMovie(called: query, on: page) { data in
             if let data = data {
                 self.movies = data.results
                 self.totalPages = data.totalPages
