@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lvb-MV-zMC">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -154,6 +154,9 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RBm-6V-Dab">
                                 <rect key="frame" x="20" y="663.66666666666663" width="394" height="178.33333333333337"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="178.33000000000001" id="fBq-em-bum"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VF6-Uc-TfS">
                                     <size key="itemSize" width="119" height="160"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -203,12 +206,6 @@
                                     <outlet property="delegate" destination="Bue-f5-iip" id="8vb-qP-dfJ"/>
                                 </connections>
                             </collectionView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gJ5-j3-oVM">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="310"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="310" id="m9s-3B-hpL"/>
-                                </constraints>
-                            </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RAA-Hs-koI">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="310"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -286,13 +283,11 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="OqF-aJ-H7f" firstAttribute="trailing" secondItem="RBm-6V-Dab" secondAttribute="trailing" id="23b-Dt-6fg"/>
-                            <constraint firstItem="gJ5-j3-oVM" firstAttribute="leading" secondItem="OqF-aJ-H7f" secondAttribute="leading" id="5KK-Vd-dMn"/>
                             <constraint firstItem="SDq-df-lGO" firstAttribute="centerY" secondItem="4HI-bI-GHo" secondAttribute="centerY" id="Jkm-B4-pTR"/>
                             <constraint firstItem="OqF-aJ-H7f" firstAttribute="trailing" secondItem="HR8-pJ-Hne" secondAttribute="trailing" constant="20" id="MB2-qP-Emk"/>
                             <constraint firstItem="qDB-Q4-dWX" firstAttribute="centerX" secondItem="JnX-Hw-nTz" secondAttribute="centerX" id="MrV-k8-2N9"/>
                             <constraint firstItem="OqF-aJ-H7f" firstAttribute="bottom" secondItem="RBm-6V-Dab" secondAttribute="bottom" constant="20" id="OIy-AR-L8i"/>
                             <constraint firstItem="J6X-ut-t8f" firstAttribute="centerY" secondItem="McK-Bw-CsP" secondAttribute="centerY" id="OX8-aR-BfB"/>
-                            <constraint firstItem="HR8-pJ-Hne" firstAttribute="top" secondItem="gJ5-j3-oVM" secondAttribute="bottom" constant="20" id="OZh-wc-Gfi"/>
                             <constraint firstItem="qDB-Q4-dWX" firstAttribute="centerY" secondItem="KLI-av-C1j" secondAttribute="centerY" id="P15-4T-D7b"/>
                             <constraint firstItem="McK-Bw-CsP" firstAttribute="top" secondItem="OqF-aJ-H7f" secondAttribute="top" constant="15" id="Q5T-r6-rz3"/>
                             <constraint firstItem="4HI-bI-GHo" firstAttribute="top" secondItem="HR8-pJ-Hne" secondAttribute="bottom" constant="30" id="QJM-ZF-9Mj"/>
@@ -314,14 +309,11 @@
                             <constraint firstItem="RBm-6V-Dab" firstAttribute="top" secondItem="y1W-0P-rES" secondAttribute="bottom" constant="25" id="qso-g5-2Yx"/>
                             <constraint firstItem="KLI-av-C1j" firstAttribute="leading" secondItem="qDB-Q4-dWX" secondAttribute="trailing" constant="18" id="v9h-cK-lSM"/>
                             <constraint firstItem="RBm-6V-Dab" firstAttribute="leading" secondItem="OqF-aJ-H7f" secondAttribute="leading" constant="20" id="vSu-0R-2rX"/>
-                            <constraint firstAttribute="trailing" secondItem="gJ5-j3-oVM" secondAttribute="trailing" id="wFD-pI-iZ8"/>
-                            <constraint firstItem="gJ5-j3-oVM" firstAttribute="top" secondItem="S0U-Mk-uNN" secondAttribute="top" id="wxf-wJ-dJ6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OqF-aJ-H7f"/>
                     </view>
                     <navigationItem key="navigationItem" id="7XY-6M-wTs"/>
                     <connections>
-                        <outlet property="backdropImageView" destination="gJ5-j3-oVM" id="x2J-M1-Jy1"/>
                         <outlet property="castCollectionView" destination="RBm-6V-Dab" id="gJb-r8-bbK"/>
                         <outlet property="genreLabel" destination="KLI-av-C1j" id="NvC-6k-ZKK"/>
                         <outlet property="overviewTextView" destination="y1W-0P-rES" id="BR4-Lh-5Xk"/>

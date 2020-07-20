@@ -62,14 +62,13 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Oswald-Bold.ttf</string>
 		<string>FiraSansExtraCondensed-Light.ttf</string>
-		<string>FiraSansExtraCondensed-Medium.ttf</string>
 		<string>FiraSansExtraCondensed-Regular.ttf</string>
-		<string>Oswald-Light.ttf</string>
-		<string>Oswald-Medium.ttf</string>
-		<string>Oswald-SemiBold.ttf</string>
+		<string>FiraSansExtraCondensed-Medium.ttf</string>
+		<string>Oswald-Bold.ttf</string>
 		<string>PathwayGothicOne-Regular.ttf</string>
+		<string>Play-Regular.ttf</string>
+		<string>Play-Bold.ttf</string>
 	</array>
 </dict>
 </plist>

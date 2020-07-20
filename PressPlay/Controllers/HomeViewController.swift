@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 import DZNEmptyDataSet
-import FirebaseAuth
+import Firebase
 
 class HomeViewController: UIViewController {
 
@@ -79,7 +79,7 @@ class HomeViewController: UIViewController {
     }
 
     private func checkLoginState() {
-        handle = Auth.auth().addStateDidChangeListener({ auth, user in
+        handle = Auth.auth().addStateDidChangeListener({ _, user in
             if user == nil {
                 let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
                 let onboardingVC = storyboard.instantiateViewController(withIdentifier: "OnboardingViewController")
@@ -200,11 +200,11 @@ class HomeViewController: UIViewController {
             guard let destinationVC = segue.destination as? MovieDetailViewController else { return }
             destinationVC.movie = trendingMovie
         } else {
-            let collectionView = sender as! UICollectionViewCell
-            prepare(segue, for: trendingCollectionView, using: collectionView, and: 0, for: trendingMovies)
-            prepare(segue, for: popularCollectionView, using: collectionView, and: 1, for: popularMovies)
-            prepare(segue, for: nowPlayingCollectionView, using: collectionView, and: 2, for: nowPlayingMovies)
-            prepare(segue, for: topRatedCollectionView, using: collectionView, and: 3, for: topRatedMovies)
+            let cell = sender as! UICollectionViewCell
+            prepare(segue, for: trendingCollectionView, using: cell, and: 0, for: trendingMovies)
+            prepare(segue, for: popularCollectionView, using: cell, and: 1, for: popularMovies)
+            prepare(segue, for: nowPlayingCollectionView, using: cell, and: 2, for: nowPlayingMovies)
+            prepare(segue, for: topRatedCollectionView, using: cell, and: 3, for: topRatedMovies)
         }
     }
 }

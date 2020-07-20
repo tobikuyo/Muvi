@@ -1,5 +1,5 @@
 //
-//  DatabaseController.swift
+//  FirebaseController.swift
 //  PressPlay
 //
 //  Created by Tobi Kuyoro on 16/07/2020.
@@ -8,18 +8,16 @@
 
 import Foundation
 import Firebase
-import FirebaseStorage
-import Kingfisher
 
-class DatabaseController {
+class FirebaseController {
 
     private init() {}
 
     // MARK: - Properties
 
-    static let shared = DatabaseController()
+    static let shared = FirebaseController()
 
-    var movies: [Movie] = []
+    private(set) var movies: [Movie] = []
     private let database = Firestore.firestore()
     private var moviesListener: ListenerRegistration!
 
@@ -161,7 +159,7 @@ class DatabaseController {
         return movies
     }
 
-    func remove(movie: Movie) {
+    func remove(_ movie: Movie) {
         guard let documentID = movie.documentID else { return }
 
         database.collection(Fire.favourites)

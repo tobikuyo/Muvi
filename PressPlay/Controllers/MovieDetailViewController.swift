@@ -103,7 +103,7 @@ class MovieDetailViewController: UIViewController {
             let image = backdropImageView.image,
             let data = image.jpegData(compressionQuality: 1) else { return }
 
-        DatabaseController.shared.save(movie: movie,
+        FirebaseController.shared.save(movie: movie,
                                        called: title,
                                        runtime: runtime,
                                        releaseYear: releaseYear,
@@ -115,8 +115,8 @@ class MovieDetailViewController: UIViewController {
 
     private func removeMovie() {
         guard let movie = movie else { return }
-        DatabaseController.shared.remove(movie: movie)
-        DatabaseController.shared.removeImage(for: movie)
+        FirebaseController.shared.remove(movie)
+        FirebaseController.shared.removeImage(for: movie)
     }
 
 

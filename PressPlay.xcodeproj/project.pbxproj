@@ -27,11 +27,7 @@
 		2CA0827524B33B6300B5D6A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA0827324B33B6300B5D6A3 /* Main.storyboard */; };
 		2CA0827724B33B6500B5D6A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CA0827624B33B6500B5D6A3 /* Assets.xcassets */; };
 		2CA0827A24B33B6500B5D6A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA0827824B33B6500B5D6A3 /* LaunchScreen.storyboard */; };
-		2CA0829124B3423700B5D6A3 /* Oswald-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CA0828B24B3423600B5D6A3 /* Oswald-SemiBold.ttf */; };
 		2CA0829224B3423700B5D6A3 /* Oswald-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CA0828C24B3423600B5D6A3 /* Oswald-Bold.ttf */; };
-		2CA0829324B3423700B5D6A3 /* Oswald-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CA0828D24B3423600B5D6A3 /* Oswald-Light.ttf */; };
-		2CA0829424B3423700B5D6A3 /* Oswald-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CA0828E24B3423600B5D6A3 /* Oswald-Medium.ttf */; };
-		2CA0829624B3423700B5D6A3 /* Oswald-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CA0829024B3423700B5D6A3 /* Oswald-Regular.ttf */; };
 		2CA0829824B3424400B5D6A3 /* PathwayGothicOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CA0829724B3424400B5D6A3 /* PathwayGothicOne-Regular.ttf */; };
 		2CA082A624B34F1500B5D6A3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA082A524B34F1500B5D6A3 /* HomeViewController.swift */; };
 		2CA082A824B3525500B5D6A3 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA082A724B3525500B5D6A3 /* MovieCollectionViewCell.swift */; };
@@ -40,15 +36,15 @@
 		2CA082AE24B36D2900B5D6A3 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA082AD24B36D2900B5D6A3 /* APIController.swift */; };
 		2CB40F0024BF918D00C63937 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CB40EFF24BF918D00C63937 /* Profile.storyboard */; };
 		2CB40F0224BFAE7A00C63937 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB40F0124BFAE7A00C63937 /* ProfileViewController.swift */; };
-		2CB40F0624C0DAC800C63937 /* SavedMovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB40F0524C0DAC800C63937 /* SavedMovieCollectionViewCell.swift */; };
-		2CB40F0824C0F78C00C63937 /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB40F0724C0F78C00C63937 /* DatabaseController.swift */; };
+		2CB40F0624C0DAC800C63937 /* SavedMovieTableViewCellViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB40F0524C0DAC800C63937 /* SavedMovieTableViewCellViewCell.swift */; };
+		2CB40F0824C0F78C00C63937 /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB40F0724C0F78C00C63937 /* FirebaseController.swift */; };
 		2CB40F0A24C1392900C63937 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB40F0924C1392900C63937 /* Alert.swift */; };
 		2CB40F5424C1F85700C63937 /* SavedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB40F5324C1F85700C63937 /* SavedDetailViewController.swift */; };
 		2CFC0A3524BF2F05002A78FC /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CFC0A3424BF2F05002A78FC /* Onboarding.storyboard */; };
 		2CFC0A3724BF3111002A78FC /* Play-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CFC0A3624BF3110002A78FC /* Play-Regular.ttf */; };
 		2CFC0A3924BF3122002A78FC /* Play-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CFC0A3824BF3122002A78FC /* Play-Bold.ttf */; };
 		2CFC0A3B24BF3509002A78FC /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFC0A3A24BF3509002A78FC /* OnboardingViewController.swift */; };
-		2CFC0A3D24BF36E4002A78FC /* OnboardingTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFC0A3C24BF36E3002A78FC /* OnboardingTextfield.swift */; };
+		2CFC0A3D24BF36E4002A78FC /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFC0A3C24BF36E3002A78FC /* OnboardingView.swift */; };
 		2CFC0A4124BF4132002A78FC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFC0A4024BF4132002A78FC /* Constants.swift */; };
 		B3005616DCBA4F00E1C1C990 /* Pods_PressPlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D4DD534F8E2F2DA1A077CC /* Pods_PressPlay.framework */; };
 /* End PBXBuildFile section */
@@ -76,11 +72,7 @@
 		2CA0827624B33B6500B5D6A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CA0827924B33B6500B5D6A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CA0827B24B33B6500B5D6A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2CA0828B24B3423600B5D6A3 /* Oswald-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-SemiBold.ttf"; sourceTree = "<group>"; };
 		2CA0828C24B3423600B5D6A3 /* Oswald-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Bold.ttf"; sourceTree = "<group>"; };
-		2CA0828D24B3423600B5D6A3 /* Oswald-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Light.ttf"; sourceTree = "<group>"; };
-		2CA0828E24B3423600B5D6A3 /* Oswald-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Medium.ttf"; sourceTree = "<group>"; };
-		2CA0829024B3423700B5D6A3 /* Oswald-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Regular.ttf"; sourceTree = "<group>"; };
 		2CA0829724B3424400B5D6A3 /* PathwayGothicOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PathwayGothicOne-Regular.ttf"; sourceTree = "<group>"; };
 		2CA082A524B34F1500B5D6A3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2CA082A724B3525500B5D6A3 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -89,15 +81,15 @@
 		2CA082AD24B36D2900B5D6A3 /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 		2CB40EFF24BF918D00C63937 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		2CB40F0124BFAE7A00C63937 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		2CB40F0524C0DAC800C63937 /* SavedMovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedMovieCollectionViewCell.swift; sourceTree = "<group>"; };
-		2CB40F0724C0F78C00C63937 /* DatabaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
+		2CB40F0524C0DAC800C63937 /* SavedMovieTableViewCellViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedMovieTableViewCellViewCell.swift; sourceTree = "<group>"; };
+		2CB40F0724C0F78C00C63937 /* FirebaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
 		2CB40F0924C1392900C63937 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		2CB40F5324C1F85700C63937 /* SavedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedDetailViewController.swift; sourceTree = "<group>"; };
 		2CFC0A3424BF2F05002A78FC /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		2CFC0A3624BF3110002A78FC /* Play-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Play-Regular.ttf"; sourceTree = "<group>"; };
 		2CFC0A3824BF3122002A78FC /* Play-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Play-Bold.ttf"; sourceTree = "<group>"; };
 		2CFC0A3A24BF3509002A78FC /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
-		2CFC0A3C24BF36E3002A78FC /* OnboardingTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTextfield.swift; sourceTree = "<group>"; };
+		2CFC0A3C24BF36E3002A78FC /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		2CFC0A4024BF4132002A78FC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		71D4DD534F8E2F2DA1A077CC /* Pods_PressPlay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PressPlay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7604A92B1E18BA45D91330CE /* Pods-PressPlay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PressPlay.debug.xcconfig"; path = "Target Support Files/Pods-PressPlay/Pods-PressPlay.debug.xcconfig"; sourceTree = "<group>"; };
@@ -128,7 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				2C70175824BA0715008D9EF5 /* GenreConvert.swift */,
-				2CFC0A3C24BF36E3002A78FC /* OnboardingTextfield.swift */,
+				2CFC0A3C24BF36E3002A78FC /* OnboardingView.swift */,
 				2CFC0A4024BF4132002A78FC /* Constants.swift */,
 				2CB40F0924C1392900C63937 /* Alert.swift */,
 			);
@@ -162,9 +154,9 @@
 				2CA0828724B33CF900B5D6A3 /* Models */,
 				2CA0828624B33CF400B5D6A3 /* Views */,
 				2CA0828524B33CEE00B5D6A3 /* Controllers */,
-				2CA0828424B33CE800B5D6A3 /* Fonts */,
 				2C70175724BA0702008D9EF5 /* Helpers */,
 				2CA0828324B33CD300B5D6A3 /* Extensions */,
+				2CA0828424B33CE800B5D6A3 /* Fonts */,
 			);
 			path = PressPlay;
 			sourceTree = "<group>";
@@ -208,10 +200,6 @@
 				2C69D1B924B9117200186620 /* FiraSansExtraCondensed-Light.ttf */,
 				2C69D1B824B9117100186620 /* FiraSansExtraCondensed-Medium.ttf */,
 				2C69D1B724B9117100186620 /* FiraSansExtraCondensed-Regular.ttf */,
-				2CA0828D24B3423600B5D6A3 /* Oswald-Light.ttf */,
-				2CA0829024B3423700B5D6A3 /* Oswald-Regular.ttf */,
-				2CA0828E24B3423600B5D6A3 /* Oswald-Medium.ttf */,
-				2CA0828B24B3423600B5D6A3 /* Oswald-SemiBold.ttf */,
 				2CA0828C24B3423600B5D6A3 /* Oswald-Bold.ttf */,
 				2CA0829724B3424400B5D6A3 /* PathwayGothicOne-Regular.ttf */,
 				2CFC0A3624BF3110002A78FC /* Play-Regular.ttf */,
@@ -239,7 +227,7 @@
 				2CA082A724B3525500B5D6A3 /* MovieCollectionViewCell.swift */,
 				2C69D1B024B9007A00186620 /* CastCollectionViewCell.swift */,
 				2C70175524BA055B008D9EF5 /* SearchTableViewCell.swift */,
-				2CB40F0524C0DAC800C63937 /* SavedMovieCollectionViewCell.swift */,
+				2CB40F0524C0DAC800C63937 /* SavedMovieTableViewCellViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -260,7 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				2CA082AD24B36D2900B5D6A3 /* APIController.swift */,
-				2CB40F0724C0F78C00C63937 /* DatabaseController.swift */,
+				2CB40F0724C0F78C00C63937 /* FirebaseController.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -336,16 +324,12 @@
 			files = (
 				2CA0827A24B33B6500B5D6A3 /* LaunchScreen.storyboard in Resources */,
 				2CFC0A3524BF2F05002A78FC /* Onboarding.storyboard in Resources */,
-				2CA0829624B3423700B5D6A3 /* Oswald-Regular.ttf in Resources */,
 				2CA0829224B3423700B5D6A3 /* Oswald-Bold.ttf in Resources */,
 				2C69D1BC24B9117200186620 /* FiraSansExtraCondensed-Light.ttf in Resources */,
 				2CFC0A3924BF3122002A78FC /* Play-Bold.ttf in Resources */,
 				2C70175F24BA4DEF008D9EF5 /* HomeScreen.storyboard in Resources */,
-				2CA0829124B3423700B5D6A3 /* Oswald-SemiBold.ttf in Resources */,
 				2CFC0A3724BF3111002A78FC /* Play-Regular.ttf in Resources */,
-				2CA0829424B3423700B5D6A3 /* Oswald-Medium.ttf in Resources */,
 				2CB40F0024BF918D00C63937 /* Profile.storyboard in Resources */,
-				2CA0829324B3423700B5D6A3 /* Oswald-Light.ttf in Resources */,
 				2C70176B24BBC6E2008D9EF5 /* GoogleService-Info.plist in Resources */,
 				2CA0829824B3424400B5D6A3 /* PathwayGothicOne-Regular.ttf in Resources */,
 				2CA0827724B33B6500B5D6A3 /* Assets.xcassets in Resources */,
@@ -415,15 +399,15 @@
 				2CA082AE24B36D2900B5D6A3 /* APIController.swift in Sources */,
 				2CA082AC24B36C9900B5D6A3 /* Results.swift in Sources */,
 				2CA082A824B3525500B5D6A3 /* MovieCollectionViewCell.swift in Sources */,
-				2CB40F0624C0DAC800C63937 /* SavedMovieCollectionViewCell.swift in Sources */,
+				2CB40F0624C0DAC800C63937 /* SavedMovieTableViewCellViewCell.swift in Sources */,
 				2CA0826E24B33B6300B5D6A3 /* AppDelegate.swift in Sources */,
 				2C796E6724B543FA00D83304 /* MovieDetailViewController.swift in Sources */,
 				2C70175424BA03EF008D9EF5 /* SearchViewController.swift in Sources */,
-				2CFC0A3D24BF36E4002A78FC /* OnboardingTextfield.swift in Sources */,
+				2CFC0A3D24BF36E4002A78FC /* OnboardingView.swift in Sources */,
 				2CB40F5424C1F85700C63937 /* SavedDetailViewController.swift in Sources */,
 				2C70175624BA055B008D9EF5 /* SearchTableViewCell.swift in Sources */,
 				2CA0827024B33B6300B5D6A3 /* SceneDelegate.swift in Sources */,
-				2CB40F0824C0F78C00C63937 /* DatabaseController.swift in Sources */,
+				2CB40F0824C0F78C00C63937 /* FirebaseController.swift in Sources */,
 				2C69D1AD24B8FC8800186620 /* Cast.swift in Sources */,
 				2CA082A624B34F1500B5D6A3 /* HomeViewController.swift in Sources */,
 				2C69D1AF24B8FE5700186620 /* Credits.swift in Sources */,

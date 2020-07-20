@@ -34,7 +34,7 @@ struct Alert {
                                       preferredStyle: .alert)
 
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
-            DatabaseController.shared.signout()
+            FirebaseController.shared.signout()
         }))
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))

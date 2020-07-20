@@ -51,18 +51,10 @@ class OnboardingViewController: UIViewController {
     }
 
     private func setupViews() {
-        OnboardingTextField.styleTextField(emailTextField)
-        OnboardingTextField.styleTextField(passwordTextField)
-        OnboardingTextField.styleFilledButton(signInButton)
+        OnboardingView.styleTextField(emailTextField)
+        OnboardingView.styleTextField(passwordTextField)
+        OnboardingView.styleFilledButton(signInButton)
         passwordTextField.isSecureTextEntry = true
-    }
-
-    private func signIn(with email: String, and password: String) {
-        DatabaseController.shared.signIn(with: email, and: password, on: self)
-    }
-
-    private func signup(with email: String, and password: String) {
-        DatabaseController.shared.signup(with: email, and: password, on: self)
     }
 
     // MARK: - IBActions
@@ -74,9 +66,9 @@ class OnboardingViewController: UIViewController {
             !email.isEmpty, !password.isEmpty else { return }
 
         if state == .notLoggedIn {
-            signIn(with: email, and: password)
+            FirebaseController.shared.signIn(with: email, and: password, on: self)
         } else {
-            signup(with: email, and: password)
+            FirebaseController.shared.signup(with: email, and: password, on: self)
         }
     }
 
