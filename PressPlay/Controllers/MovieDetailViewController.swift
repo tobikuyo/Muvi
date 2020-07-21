@@ -31,10 +31,10 @@ class MovieDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkSavedStatus()
         updateViews()
         textViewSetup()
         getCast()
-        checkSavedStatus()
     }
 
     // MARK: - Methods
@@ -59,8 +59,9 @@ class MovieDetailViewController: UIViewController {
                 let runtimeLabel = "\(String(describing: movie.runtime!)) MIN"
                 let releaseYearLabel = String((movie.releaseDate?.split(separator: "-")[0])!)
                 let genreLabel = movie.genres?.first?.name?.uppercased() ?? "No Genre"
+                let movieURL = movie.backdrop?.url
 
-                self.backdropImageView.kf.setImage(with: movie.backdrop?.url)
+                self.backdropImageView.kf.setImage(with: movieURL)
                 self.titleLabel.text = movie.title?.uppercased()
                 self.runtimeLabel.text = runtimeLabel
                 self.releaseYearLabel.text = releaseYearLabel
@@ -120,7 +121,6 @@ class MovieDetailViewController: UIViewController {
         firebaseController?.remove(movie)
         firebaseController?.removeImage(for: movie)
     }
-
 
     // MARK: - IBActions
 

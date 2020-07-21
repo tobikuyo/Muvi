@@ -49,9 +49,11 @@ class SearchViewController: TabViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Segue.movieDetail {
             if let destinationVC = segue.destination as? MovieDetailViewController,
-                let indexPath = tableView.indexPathsForSelectedRows?.first {
+                let indexPath = tableView.indexPathForSelectedRow {
                 let movie = movies[indexPath.row]
                 destinationVC.movie = movie
+                destinationVC.apiController = apiController
+                destinationVC.firebaseController = firebaseController
             }
         }
     }

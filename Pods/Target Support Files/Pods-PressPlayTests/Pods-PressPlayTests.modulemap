@@ -1,0 +1,6 @@
+module Pods_PressPlayTests {
+  umbrella header "Pods-PressPlayTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

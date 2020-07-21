@@ -6,7 +6,7 @@
 //  Copyright © 2020 Tobi Kuyoro. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import Firebase
 
 class FirebaseController {
